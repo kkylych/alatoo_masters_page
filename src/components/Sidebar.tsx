@@ -1,84 +1,94 @@
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-
-const MenuButton = ({ onClick }) => (
-  <motion.button
-    className="text-5xl cursor-pointer text-white inline-block"
-    onClick={onClick}
-    whileHover={{ scale: 0.9 }}
-    whileTap={{ scale: 0.9 }}
-    style={{ transformOrigin: "center" }}
-  >
-    <i className="bx bx-menu align-middle"></i>
-  </motion.button>
-);
+import { Link } from "react-router-dom";
 
 const Sidebar = () => {
-  const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [isSidebarOpen, setIsSidebarOpen] = useState(false);
 
   const sidebarVariants = {
-    open: { x: 0 },
-    closed: { x: "-100%" },
+    open: { x: 0, transition: { duration: 0.2 } },
+    closed: { x: "-100%", transition: { duration: 0.2 } },
   };
 
-  const linkVariants = {
-    hover: { scale: 1.05, backgroundColor: "#cf1421", color: "#ffffff" },
-    tap: { scale: 0.95 },
-  };
+  const menuItems = [
+    {
+      link: "computer-science",
+      label: "Информатика и вычислительная техника",
+    },
+    { link: "economics", label: "Экономика" },
+    { link: "international-relations", label: "Международные отношения" },
+    { link: "management", label: "Менеджмент" },
+    { link: "phylology", label: "Филология" },
+    { link: "law", label: "Юриспруденция" },
+    { link: "pedagogy", label: "Педагогика" },
+    { link: "journalism", label: "Журналистика" },
+    { link: "psychology", label: "Психология" },
+    { link: "linguistics", label: "Лингвистика" },
+  ];
 
   return (
-    <nav className="sticky top-0 flex justify-end items-center text-white py-3 px-8 md:px-32 drop-shadow-md z-30 bg-[#2d2753]">
-      <div className="flex justify-end w-auto">
-        <MenuButton onClick={() => setIsMenuOpen(true)} />
-      </div>
+    <div>
+      <AnimatePresence>
+        {isSidebarOpen && (
+          <motion.div
+            className="fixed inset-0 bg-black z-40"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 0.4 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 0.2 }}
+            onClick={() => setIsSidebarOpen(false)}
+          />
+        )}
+      </AnimatePresence>
 
       <AnimatePresence>
-        {isMenuOpen && (
-          <motion.div
-            className="fixed top-0 left-0 h-full w-64 z-50 p-6 shadow-xl bg-[#2d2753]"
-            style={{
-              backgroundColor: "#2d2753",
-              boxShadow: "10px 0 15px -3px rgba(0,0,0,0.3)",
-            }}
+        {isSidebarOpen && (
+          <motion.aside
+            className="fixed top-24 left-0 h-full w-64 bg-[#2d2753] text-white flex flex-col p-4 z-50"
             initial="closed"
             animate="open"
             exit="closed"
             variants={sidebarVariants}
-            transition={{ type: "tween", duration: 0.3 }}
           >
             <button
-              className="absolute top-4 right-4 text-3xl text-white hover:text-red-500 transition-colors"
-              onClick={() => setIsMenuOpen(false)}
+              className="self-end text-2xl mb-4"
+              onClick={() => setIsSidebarOpen(false)}
             >
-              ×
+              &#10005;
             </button>
-
-            <ul className="flex flex-col gap-4 font-montserrat bg-[#2d2753]">
-              {[
-                ["О нас", "#about"],
-                ["Магистратура", "#masters"],
-                ["PhD", "#phd"],
-                ["Аспирантура", "#aspirantura"],
-                ["Публикации", "#publications"],
-                ["Поступление", "#admissions"],
-              ].map(([title, url]) => (
+            <ul className="flex flex-col gap-4">
+              {menuItems.map((item, index) => (
                 <motion.li
-                  key={title}
-                  className="p-3 rounded-md cursor-pointer text-white"
-                  variants={linkVariants}
-                  whileHover="hover"
-                  whileTap="tap"
+                  key={index}
+                  className="text-center py-2 cursor-pointer"
+                  whileHover={{ backgroundColor: "#cf1421", color: "#ffffff" }}
+                  transition={{ duration: 0.2 }}
+                  onClick={() => setIsSidebarOpen(false)}
                 >
-                  <a href={url} onClick={() => setIsMenuOpen(false)}>
-                    {title}
-                  </a>
+                  <Link to={item.link}>{item.label}</Link>
                 </motion.li>
               ))}
             </ul>
-          </motion.div>
+          </motion.aside>
         )}
       </AnimatePresence>
-    </nav>
+
+      {!isSidebarOpen && (
+        <motion.button
+          onClick={() => setIsSidebarOpen(true)}
+          initial={{ opacity: 0.5, scale: 1, backgroundColor: "#2d2753" }}
+          whileHover={{
+            opacity: 1,
+            scale: 1.1,
+            backgroundColor: "#cf1421",
+            transition: { duration: 0.2 },
+          }}
+          className="cursor-pointer fixed top-30 left-5 w-12 h-12 flex items-center justify-center text-white rounded-full z-50"
+        >
+          &#9776;
+        </motion.button>
+      )}
+    </div>
   );
 };
 

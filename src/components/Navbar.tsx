@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import Logo from "../assets/logo.png";
+import { Link } from "react-router-dom";
 
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -16,8 +17,8 @@ const Navbar = () => {
   };
 
   return (
-    <nav className="sticky top-0 left-0 flex justify-between items-center text-white py-3 px-8 md:px-32 bg-[#2d2753] drop-shadow-md z-30">
-      <a href="#">
+    <nav className="sticky top-0 left-0 flex justify-between items-center text-white py-3 px-8 md:px-32 bg-[#2d2753] drop-shadow-md z-100">
+      <Link to="/">
         <motion.img
           src={Logo}
           alt="Logo"
@@ -25,7 +26,7 @@ const Navbar = () => {
           whileHover={{ scale: 1.05 }}
           whileTap={{ scale: 0.95 }}
         />
-      </a>
+      </Link>
 
       <ul className="hidden xl:flex items-center gap-8 font-montserrat font-semibold text-sm">
         <motion.li
@@ -34,7 +35,7 @@ const Navbar = () => {
           whileHover="hover"
           whileTap="tap"
         >
-          <a href="#about">О нас</a>
+          <Link to="/about">О нас</Link>
         </motion.li>
         <motion.li
           className="p-2 rounded-md cursor-pointer"
@@ -42,7 +43,7 @@ const Navbar = () => {
           whileHover="hover"
           whileTap="tap"
         >
-          <a href="#masters">Магистратура</a>
+          <Link to="/masters">Магистратура</Link>
         </motion.li>
         <motion.li
           className="p-2 rounded-md cursor-pointer"
@@ -50,7 +51,7 @@ const Navbar = () => {
           whileHover="hover"
           whileTap="tap"
         >
-          <a href="#phd">PhD</a>
+          <Link to="/phd">PhD</Link>
         </motion.li>
         <motion.li
           className="p-2 rounded-md cursor-pointer"
@@ -58,7 +59,7 @@ const Navbar = () => {
           whileHover="hover"
           whileTap="tap"
         >
-          <a href="#aspirantura">Аспирантура</a>
+          <Link to="/aspirantura">Аспирантура</Link>
         </motion.li>
         <motion.li
           className="p-2 rounded-md cursor-pointer"
@@ -66,7 +67,7 @@ const Navbar = () => {
           whileHover="hover"
           whileTap="tap"
         >
-          <a href="#publications">Публикации</a>
+          <Link to="/publications">Публикации</Link>
         </motion.li>
         <motion.li
           className="p-2 rounded-md cursor-pointer"
@@ -74,7 +75,7 @@ const Navbar = () => {
           whileHover="hover"
           whileTap="tap"
         >
-          <a href="#admissions">Поступление</a>
+          <Link to="/admissions">Поступление</Link>
         </motion.li>
       </ul>
 
@@ -114,42 +115,42 @@ const Navbar = () => {
               whileHover={{ backgroundColor: "#cf1421", color: "#ffffff" }}
               transition={{ duration: 0.2 }}
             >
-              <a href="#about">О нас</a>
+              <Link to="/about">О нас</Link>
             </motion.li>
             <motion.li
               className="list-none w-full text-center p-4 cursor-pointer text-white"
               whileHover={{ backgroundColor: "#cf1421", color: "#ffffff" }}
               transition={{ duration: 0.2 }}
             >
-              <a href="#masters">Магистратура</a>
+              <Link to="/masters">Магистратура</Link>
             </motion.li>
             <motion.li
               className="list-none w-full text-center p-4 cursor-pointer text-white"
               whileHover={{ backgroundColor: "#cf1421", color: "#ffffff" }}
               transition={{ duration: 0.2 }}
             >
-              <a href="#phd">PhD</a>
+              <Link to="/phd">PhD</Link>
             </motion.li>
             <motion.li
               className="list-none w-full text-center p-4 cursor-pointer text-white"
               whileHover={{ backgroundColor: "#cf1421", color: "#ffffff" }}
               transition={{ duration: 0.2 }}
             >
-              <a href="#aspirantura">Аспирантура</a>
+              <Link to="/aspirantura">Аспирантура</Link>
             </motion.li>
             <motion.li
               className="list-none w-full text-center p-4 cursor-pointer text-white"
               whileHover={{ backgroundColor: "#cf1421", color: "#ffffff" }}
               transition={{ duration: 0.2 }}
             >
-              <a href="#publications">Публикации</a>
+              <Link to="/publications">Публикации</Link>
             </motion.li>
             <motion.li
               className="list-none w-full text-center p-4 cursor-pointer text-white"
               whileHover={{ backgroundColor: "#cf1421", color: "#ffffff" }}
               transition={{ duration: 0.2 }}
             >
-              <a href="#admissions">Поступление</a>
+              <Link to="#admissions">Поступление</Link>
             </motion.li>
           </motion.div>
         )}

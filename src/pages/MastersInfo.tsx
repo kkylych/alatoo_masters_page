@@ -121,11 +121,9 @@ const MastersInfo = () => {
             className="group relative overflow-hidden bg-white px-8 pt-16 pb-12 shadow-xl ring-1 ring-gray-900/5 transition-all duration-500 hover:-translate-y-2 hover:shadow-2xl w-full rounded-lg border border-solid border-gray-200 hover:border-[#cf1421]"
             style={{ boxShadow: "0 10px 28px rgba(0,0,0,.08)" }}
           >
-       
             <span className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-0 h-32 w-32 rounded-full  transition-all duration-700 group-hover:scale-[15] group-hover:bg-[#cf1421]"></span>
 
             <div className="relative z-10 mx-auto space-y-8">
-            
               <motion.span
                 className="grid h-24 w-24 place-items-center rounded-full bg-[#cf1421] mx-auto"
                 whileHover={{ scale: 1.1 }}

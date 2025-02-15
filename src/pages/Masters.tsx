@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 import mastersPhoto from "../assets/masters_photo.jpg";
-import Sidebar from "../components/Sidebar";
+import MastersInfo from "./MastersInfo";
 
 const Masters = () => {
   const buttonVariants = {
@@ -13,19 +13,18 @@ const Masters = () => {
     initial: { scale: 1, backgroundColor: "#2d2753" },
   };
 
-
   return (
-
-      <section className="pt-20 md:pt-30">
-        
+    <>
+      <section className="px-8 pt-20 md:pt-30">
         <motion.div
+          key="masters-page"
           className="mx-auto px-8 lg:flex gap-12"
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true, amount: 0.5 }}
-          transition={{ duration: 0.7 }}
+          initial={{ opacity: 0, y: -50 }}
+          animate={{ opacity: 1, y: 0 }}
+          exit={{ opacity: 0, y: -50 }}
+          transition={{ duration: 0.7, ease: "easeOut" }}
           variants={{
-            hidden: { opacity: 0, y: -100 },
+            hidden: { opacity: 0, y: -50 },
             visible: { opacity: 1, y: 0 },
           }}
         >
@@ -54,20 +53,20 @@ const Masters = () => {
             </p>
           </div>
 
-          <div className="lg:w-1/2 pt-10">
+          <div className="lg:w-1/2 pt-5">
             <div style={{ height: "450px" }}>
               <img
                 src={mastersPhoto}
                 alt=""
-                className="w-full h-full object-cover rounded-lg hover:scale-102 transition-all"
+                className="drop-shadow-2xl w-full h-full object-cover rounded-lg hover:scale-102 transition-all"
               />
             </div>
           </div>
         </motion.div>
       </section>
 
-
-
+      <MastersInfo />
+    </>
   );
 };
 
