@@ -1,29 +1,33 @@
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { Link } from "react-router-dom";
+import { NavLink, useLocation } from "react-router-dom";
 
 const Sidebar = () => {
-  const [isSidebarOpen, setIsSidebarOpen] = useState(false);
+  const [isSidebarOpen, setIsSidebarOpen] = useState<boolean>(false);
+  const location = useLocation();
 
   const sidebarVariants = {
     open: { x: 0, transition: { duration: 0.2 } },
     closed: { x: "-100%", transition: { duration: 0.2 } },
   };
 
-  const menuItems = [
+  const menuItems= [
     {
-      link: "computer-science",
+      link: "/masters/computer-science",
       label: "Информатика и вычислительная техника",
     },
-    { link: "economics", label: "Экономика" },
-    { link: "international-relations", label: "Международные отношения" },
-    { link: "management", label: "Менеджмент" },
-    { link: "phylology", label: "Филология" },
-    { link: "law", label: "Юриспруденция" },
-    { link: "pedagogy", label: "Педагогика" },
-    { link: "journalism", label: "Журналистика" },
-    { link: "psychology", label: "Психология" },
-    { link: "linguistics", label: "Лингвистика" },
+    { link: "/masters/economics", label: "Экономика" },
+    {
+      link: "/masters/international-relations",
+      label: "Международные отношения",
+    },
+    { link: "/masters/management", label: "Менеджмент" },
+    { link: "/masters/philology", label: "Филология" },
+    { link: "/masters/law", label: "Юриспруденция" },
+    { link: "/masters/pedagogy", label: "Педагогика" },
+    { link: "/masters/journalism", label: "Журналистика" },
+    { link: "/masters/psychology", label: "Психология" },
+    { link: "/masters/linguistics", label: "Лингвистика" },
   ];
 
   return (
@@ -51,23 +55,29 @@ const Sidebar = () => {
             variants={sidebarVariants}
           >
             <button
-              className="self-end text-2xl mb-4"
+              className="self-end text-2xl mb-4 cursor-pointer"
               onClick={() => setIsSidebarOpen(false)}
             >
               &#10005;
             </button>
             <ul className="flex flex-col gap-4">
-              {menuItems.map((item, index) => (
-                <motion.li
-                  key={index}
-                  className="text-center py-2 cursor-pointer"
-                  whileHover={{ backgroundColor: "#cf1421", color: "#ffffff" }}
-                  transition={{ duration: 0.2 }}
-                  onClick={() => setIsSidebarOpen(false)}
-                >
-                  <Link to={item.link}>{item.label}</Link>
-                </motion.li>
-              ))}
+              {menuItems.map((item, index) => {
+                const isActive = location.pathname === item.link;
+                return (
+                  <motion.li
+                    key={index}
+                    className={`text-center py-1 cursor-pointer rounded-md ${
+                      isActive
+                        ? "bg-[#cf1421] text-white"
+                        : "hover:bg-[#cf1421] transition-all"
+                    }`}
+                    transition={{ duration: 0.2 }}
+                    onClick={() => setIsSidebarOpen(false)}
+                  >
+                    <NavLink to={item.link}>{item.label}</NavLink>
+                  </motion.li>
+                );
+              })}
             </ul>
           </motion.aside>
         )}

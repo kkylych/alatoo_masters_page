@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import Logo from "../assets/logo.png";
-import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -17,8 +17,8 @@ const Navbar = () => {
   };
 
   return (
-    <nav className="sticky top-0 left-0 flex justify-between items-center text-white py-3 px-8 md:px-32 bg-[#2d2753] drop-shadow-md z-100">
-      <Link to="/">
+    <nav className="sticky top-0 left-0 flex justify-between items-center text-white py-3 px-8 md:px-25 bg-[#2d2753] drop-shadow-md z-100">
+      <NavLink to="/">
         <motion.img
           src={Logo}
           alt="Logo"
@@ -26,7 +26,7 @@ const Navbar = () => {
           whileHover={{ scale: 1.05 }}
           whileTap={{ scale: 0.95 }}
         />
-      </Link>
+      </NavLink>
 
       <ul className="hidden xl:flex items-center gap-8 font-montserrat font-semibold text-sm">
         <motion.li
@@ -35,7 +35,7 @@ const Navbar = () => {
           whileHover="hover"
           whileTap="tap"
         >
-          <Link to="/about">О нас</Link>
+          <NavLink to="/about">О нас</NavLink>
         </motion.li>
         <motion.li
           className="p-2 rounded-md cursor-pointer"
@@ -43,7 +43,7 @@ const Navbar = () => {
           whileHover="hover"
           whileTap="tap"
         >
-          <Link to="/masters">Магистратура</Link>
+          <NavLink to="/masters">Магистратура</NavLink>
         </motion.li>
         <motion.li
           className="p-2 rounded-md cursor-pointer"
@@ -51,7 +51,7 @@ const Navbar = () => {
           whileHover="hover"
           whileTap="tap"
         >
-          <Link to="/phd">PhD</Link>
+          <NavLink to="/phd">PhD</NavLink>
         </motion.li>
         <motion.li
           className="p-2 rounded-md cursor-pointer"
@@ -59,7 +59,7 @@ const Navbar = () => {
           whileHover="hover"
           whileTap="tap"
         >
-          <Link to="/aspirantura">Аспирантура</Link>
+          <NavLink to="/aspirantura">Аспирантура</NavLink>
         </motion.li>
         <motion.li
           className="p-2 rounded-md cursor-pointer"
@@ -67,7 +67,7 @@ const Navbar = () => {
           whileHover="hover"
           whileTap="tap"
         >
-          <Link to="/publications">Публикации</Link>
+          <NavLink to="/publications">Публикации</NavLink>
         </motion.li>
         <motion.li
           className="p-2 rounded-md cursor-pointer"
@@ -75,7 +75,7 @@ const Navbar = () => {
           whileHover="hover"
           whileTap="tap"
         >
-          <Link to="/admissions">Поступление</Link>
+          <NavLink to="/admissions">Поступление</NavLink>
         </motion.li>
       </ul>
 
@@ -103,7 +103,7 @@ const Navbar = () => {
       <AnimatePresence>
         {isMenuOpen && (
           <motion.div
-            className="absolute xl:hidden top-24 left-0 w-full bg-[#2d2753] flex flex-col items-center gap-6 font-semibold text-base overflow-hidden font-montserrat"
+            className="absolute xl:hidden top-24 left-0 w-full bg-[#2d2753] flex flex-col items-center gap-6 font-semibold text-base overflow-hidden font-montserrat z-50"
             initial="closed"
             animate="open"
             exit="closed"
@@ -115,42 +115,54 @@ const Navbar = () => {
               whileHover={{ backgroundColor: "#cf1421", color: "#ffffff" }}
               transition={{ duration: 0.2 }}
             >
-              <Link to="/about">О нас</Link>
+              <NavLink onClick={() => setIsMenuOpen(false)} to="/about">
+                О нас
+              </NavLink>
             </motion.li>
             <motion.li
               className="list-none w-full text-center p-4 cursor-pointer text-white"
               whileHover={{ backgroundColor: "#cf1421", color: "#ffffff" }}
               transition={{ duration: 0.2 }}
             >
-              <Link to="/masters">Магистратура</Link>
+              <NavLink onClick={() => setIsMenuOpen(false)} to="/masters">
+                Магистратура
+              </NavLink>
             </motion.li>
             <motion.li
               className="list-none w-full text-center p-4 cursor-pointer text-white"
               whileHover={{ backgroundColor: "#cf1421", color: "#ffffff" }}
               transition={{ duration: 0.2 }}
             >
-              <Link to="/phd">PhD</Link>
+              <NavLink onClick={() => setIsMenuOpen(false)} to="/phd">
+                PhD
+              </NavLink>
             </motion.li>
             <motion.li
               className="list-none w-full text-center p-4 cursor-pointer text-white"
               whileHover={{ backgroundColor: "#cf1421", color: "#ffffff" }}
               transition={{ duration: 0.2 }}
             >
-              <Link to="/aspirantura">Аспирантура</Link>
+              <NavLink onClick={() => setIsMenuOpen(false)} to="/aspirantura">
+                Аспирантура
+              </NavLink>
             </motion.li>
             <motion.li
               className="list-none w-full text-center p-4 cursor-pointer text-white"
               whileHover={{ backgroundColor: "#cf1421", color: "#ffffff" }}
               transition={{ duration: 0.2 }}
             >
-              <Link to="/publications">Публикации</Link>
+              <NavLink onClick={() => setIsMenuOpen(false)} to="/publications">
+                Публикации
+              </NavLink>
             </motion.li>
             <motion.li
               className="list-none w-full text-center p-4 cursor-pointer text-white"
               whileHover={{ backgroundColor: "#cf1421", color: "#ffffff" }}
               transition={{ duration: 0.2 }}
             >
-              <Link to="#admissions">Поступление</Link>
+              <NavLink onClick={() => setIsMenuOpen(false)} to="/admissions">
+                Поступление
+              </NavLink>
             </motion.li>
           </motion.div>
         )}

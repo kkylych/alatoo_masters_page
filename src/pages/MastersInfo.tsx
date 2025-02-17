@@ -148,7 +148,7 @@ const MastersInfo = () => {
                 На заметку иностранным гражданам!
               </h3>
 
-              <div className=" text-xl lg:text-2xl mt-6 font-light text-[#333333] leading-relaxed transition-colors duration-300 group-hover:text-white/90 max-w-2xl mx-auto">
+              <div className="text-xl lg:text-2xl mt-6 font-light text-[#333333] leading-relaxed transition-colors duration-300 group-hover:text-white/90 max-w-2xl mx-auto">
                 <p>
                   Представить перевод паспорта, диплома и его вкладыша на
                   кыргызский либо на русский языки (перевод должен быть

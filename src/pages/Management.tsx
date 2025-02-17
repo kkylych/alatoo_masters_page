@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import mangPhoto from "../assets/mangPhoto.jpg";
+import mangPhoto from "../assets/mang_photo.jpg";
 
 const Management = () => {
   return (
