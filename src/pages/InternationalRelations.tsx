@@ -4,10 +4,10 @@ import interRelPhoto from "../assets/interRel_photo.jpg";
 const InternationalRelations = () => {
   return (
     <>
-      <section className="px-8 pt-20 pb-20">
+      <section className="px-8 pt-20 pb-20 ">
         <motion.div
           key="international-relations-page"
-          className="mx-auto px-8 lg:flex gap-12"
+          className="mx-auto px-8 lg:flex-row flex flex-col items-center gap-12"
           initial={{ opacity: 0, y: -50 }}
           animate={{ opacity: 1, y: 0 }}
           exit={{ opacity: 0, y: -50 }}
@@ -28,7 +28,7 @@ const InternationalRelations = () => {
           </div>
 
           <div className="text-center lg:text-left lg:w-1/2 sm:pb-12">
-            <h1 className="text-4xl lg:text-5xl xl:text-6xl font-bold leading-none text-[#2d2753]">
+            <h1 className="text-2xl lg:text-5xl xl:text-6xl font-bold leading-none text-[#2d2753]">
               Международные отношения
             </h1>
             <p className="text-lg lg:text-xl mt-6 font-light text-[#333333]">

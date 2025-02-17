@@ -17,7 +17,7 @@ const Navbar = () => {
   };
 
   return (
-    <nav className="sticky top-0 left-0 flex justify-between items-center text-white py-3 px-8 md:px-25 bg-[#2d2753] drop-shadow-md z-100">
+    <nav className="sticky top-0 left-0 flex justify-between items-center text-white py-4 px-8 md:px-18 bg-[#2d2753] drop-shadow-md z-100">
       <NavLink to="/">
         <motion.img
           src={Logo}

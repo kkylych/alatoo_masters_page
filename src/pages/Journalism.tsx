@@ -22,7 +22,7 @@ const Journalism = () => {
       <section className="px-8 pt-20 pb-20">
         <motion.div
           key="journal-page"
-          className="mx-auto px-8 lg:flex gap-12"
+          className="mx-auto px-8 lg:flex-row flex flex-col items-center gap-12"
           initial={{ opacity: 0, y: -50 }}
           animate={{ opacity: 1, y: 0 }}
           exit={{ opacity: 0, y: -50 }}
@@ -43,7 +43,7 @@ const Journalism = () => {
           </div>
 
           <div className="text-center lg:text-left lg:w-1/2 sm:pb-12">
-            <h1 className="text-4xl lg:text-5xl xl:text-6xl font-bold leading-none text-[#2d2753]">
+            <h1 className="text-2xl lg:text-5xl xl:text-6xl font-bold leading-none text-[#2d2753]">
               Журналистика
             </h1>
             <p className="text-lg lg:text-xl mt-6 font-light text-[#333333]">
@@ -61,12 +61,12 @@ const Journalism = () => {
         </motion.div>
       </section>
 
-      <div className="px-8 mx-auto gap-12 text-center max-w-full overflow-hidden md:pt-10 pt-7">
+      <div className="px-16 mx-auto gap-12 text-center max-w-full overflow-hidden md:pt-10 pt-7">
         <h2 className="text-3xl lg:text-5xl font-semibold text-[#2d2753] flex items-center justify-center gap-3">
           <i className="bx bx-info-circle text-[#cf1421] text-5xl"></i>
           Почему нужно выбирать нас?
         </h2>
-        <div className="flex flex-col md:flex-row gap-6 mt-15 flex-wrap">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 gap-6 mt-15 flex-wrap">
           {information.map((feature, index) => (
             <motion.div
               key={index}

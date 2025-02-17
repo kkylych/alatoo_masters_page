@@ -27,7 +27,7 @@ const MastersInfo = () => {
   return (
     <div>
       <motion.section
-        className="lg:pb-28 lg:pt-30"
+        className="lg:pb-28 lg:pt-30 lg:flex-row flex flex-col items-center"
         initial="hidden"
         whileInView="visible"
         viewport={{ once: true, amount: 0.5 }}
@@ -37,8 +37,8 @@ const MastersInfo = () => {
           visible: { opacity: 1, y: 0 },
         }}
       >
-        <div className="container px-8 mx-auto gap-12 text-center max-w-full overflow-hidden md:pt-10 pt-7">
-          <h2 className="text-3xl lg:text-5xl font-semibold text-[#2d2753] flex items-center justify-center gap-3">
+        <div className="px-8 mx-auto gap-12 text-center max-w-full overflow-hidden md:pt-10 pt-7 flex flex-col items-center">
+          <h2 className="text-2xl lg:text-5xl font-semibold text-[#2d2753] flex items-center justify-center gap-3">
             <i className="bx bx-info-circle text-[#cf1421] text-5xl"></i>
             Основные сведения
           </h2>
@@ -78,8 +78,8 @@ const MastersInfo = () => {
           visible: { opacity: 1, y: 0 },
         }}
       >
-        <div className="container px-8 mx-auto text-center max-w-full overflow-hidden md:pt-10 pt-7">
-          <h2 className="text-3xl lg:text-5xl font-semibold text-[#2d2753] flex items-center justify-center gap-3">
+        <div className="container px-8 mx-auto text-center max-w-full overflow-hidden md:pt-10 pt-7 flex flex-col items-center">
+          <h2 className="text-2xl lg:text-5xl font-semibold text-[#2d2753] flex items-center justify-center gap-3">
             <i className="bx bxs-file-doc text-[#cf1421] text-5xl"></i>
             Документы для поступления
           </h2>
@@ -116,7 +116,7 @@ const MastersInfo = () => {
           visible: { opacity: 1, y: 0 },
         }}
       >
-        <div className="container px-8 text-center mx-auto max-w-full">
+        <div className="container px-8 text-center mb-15 mx-auto max-w-full">
           <div
             className="group relative overflow-hidden bg-white px-8 pt-16 pb-12 shadow-xl ring-1 ring-gray-900/5 transition-all duration-500 hover:-translate-y-2 hover:shadow-2xl w-full rounded-lg border border-solid border-gray-200 hover:border-[#cf1421]"
             style={{ boxShadow: "0 10px 28px rgba(0,0,0,.08)" }}
@@ -144,12 +144,12 @@ const MastersInfo = () => {
                 </svg>
               </motion.span>
 
-              <h3 className="text-5xl font-bold text-[#2d2753] transition-colors duration-300 group-hover:text-white">
+              <h3 className="md:text-5xl font-bold text-[#2d2753] text-3xl transition-colors duration-300 group-hover:text-white flex justify-center">
                 На заметку иностранным гражданам!
               </h3>
 
-              <div className="text-xl lg:text-2xl mt-6 font-light text-[#333333] leading-relaxed transition-colors duration-300 group-hover:text-white/90 max-w-2xl mx-auto">
-                <p>
+              <div className="px-8 text-xl lg:text-2xl mt-6 font-light text-[#333333] leading-relaxed transition-colors duration-300 group-hover:text-white/90 max-w-2xl mx-auto">
+                <p className="flex justify-center items-center">
                   Представить перевод паспорта, диплома и его вкладыша на
                   кыргызский либо на русский языки (перевод должен быть
                   подтвержден сертифицированным нотариусом или переводческой
