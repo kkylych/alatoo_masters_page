@@ -1,19 +1,22 @@
 import { motion } from "framer-motion";
 import journalPhoto from "../assets/journal_photo.jpg";
+import { useTranslation } from "react-i18next";
 
 const Journalism = () => {
+  const { t } = useTranslation();
+
   const information = [
     {
-      description: "Гибридная форма обучения",
+      description: t("journalism.choiceItem_1"),
     },
     {
-      description: "Гибкий график занятий и возможность совмещать учебу с профессиональной деятельностью",
+      description: t("journalism.choiceItem_2"),
     },
     {
-      description: "Возможность дальнейшего карьерного роста в сфере медиа коммуникаций, связей с общественностью и других",
+      description: t("journalism.choiceItem_3"),
     },
     {
-      description: "Преподавание ведется полностью на английском языке, включая преподавателей-носителей английского языка",
+      description: t("journalism.choiceItem_4"),
     },
   ];
 
@@ -44,10 +47,11 @@ const Journalism = () => {
 
           <div className="text-center lg:text-left lg:w-1/2 sm:pb-12">
             <h1 className="text-2xl lg:text-5xl xl:text-6xl font-bold leading-none text-[#2d2753]">
-              Журналистика
+              {/* Журналистика */}
+              {t("journalism.title")}
             </h1>
             <p className="text-lg lg:text-xl mt-6 font-light text-[#333333]">
-              Программа магистратуры Журналистика (Медиа, искусственный
+              {/* Программа магистратуры Журналистика (Медиа, искусственный
               интеллект и искусство) предоставляет широкие возможности, развивая
               профессиональные и исследовательские навыки в таких сферах как
               Prompt engineering, искусственный интеллект, журналистика данных,
@@ -55,7 +59,8 @@ const Journalism = () => {
               Программа также включает углубленное изучение менеджмента
               различных проектов, SMM marketing, targeting, создание креативного
               контента с помощью мультимедийных программ и современных
-              медиатехнологий.
+              медиатехнологий. */}
+              {t("journalism.description")}
             </p>
           </div>
         </motion.div>
@@ -64,7 +69,8 @@ const Journalism = () => {
       <div className="px-16 mx-auto gap-12 text-center max-w-full overflow-hidden md:pt-10 pt-7">
         <h2 className="text-3xl lg:text-5xl font-semibold text-[#2d2753] flex items-center justify-center gap-3">
           <i className="bx bx-info-circle text-[#cf1421] text-5xl"></i>
-          Почему нужно выбирать нас?
+          {/* Почему нужно выбирать нас? */}
+          {t("journalism.choiceTitle")}
         </h2>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 gap-6 mt-15 flex-wrap">
           {information.map((feature, index) => (

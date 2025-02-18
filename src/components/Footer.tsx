@@ -1,110 +1,112 @@
+import { useTranslation } from "react-i18next";
 import { Link } from "react-router-dom";
 
 const Footer = () => {
+  const { t } = useTranslation();
   return (
     <>
       <footer className="mt-8 bg-[#242424] text-white py-14 pt-20 px-8 md:px-25 flex flex-wrap justify-between drop-shadow-md gap-12 text-sm font-thin">
         <nav className="w-full sm:w-1/2 md:w-1/3 lg:w-auto">
-          <h6 className="text-lg font-semibold mb-2">Образование</h6>
+          <h6 className="text-lg font-semibold mb-2">{t("footer.title_1")}</h6>
           <Link to="#" className="block mb-2 hover:text-gray-400">
-            Лицензии и свидетельства об аккредитации
+            {t("footer.title_1_item_1")}
           </Link>
           <Link to="#" className="block mb-2 hover:text-gray-400">
-            Факультеты и кафедры
+            {t("footer.title_1_item_2")}
           </Link>
           <Link to="#" className="block mb-2 hover:text-gray-400">
-            Система онлайн-курсов
+            {t("footer.title_1_item_3")}
           </Link>
           <Link to="#" className="block hover:text-gray-400">
-            Библиотека
+            {t("footer.title_1_item_4")}
           </Link>
         </nav>
         <nav className="w-full sm:w-1/2 md:w-1/3 lg:w-auto">
-          <h6 className="text-lg font-semibold mb-2">Исследования</h6>
+          <h6 className="text-lg font-semibold mb-2">{t("footer.title_2")}</h6>
           <Link to="#" className="block mb-2 hover:text-gray-400">
-            Институты
+            {t("footer.title_2_item_1")}
           </Link>
           <Link to="#" className="block mb-2 hover:text-gray-400">
-            Исследовательские центры
+            {t("footer.title_2_item_2")}
           </Link>
           <Link to="#" className="block hover:text-gray-400">
-            Лаборатории
+            {t("footer.title_2_item_3")}
           </Link>
         </nav>
         <nav className="w-full sm:w-1/2 md:w-1/3 lg:w-auto">
-          <h6 className="text-lg font-semibold mb-2">Поступление</h6>
+          <h6 className="text-lg font-semibold mb-2">{t("footer.title_3")}</h6>
           <Link to="#" className="block mb-2 hover:text-gray-400">
-            Студенты граждан КР
+            {t("footer.title_3_item_1")}
           </Link>
           <Link to="#" className="block hover:text-gray-400">
-            Иностранные студенты
+            {t("footer.title_3_item_1")}
           </Link>
         </nav>
         <nav className="w-full sm:w-1/2 md:w-1/3 lg:w-auto">
-          <h6 className="text-lg font-semibold mb-2">Университетская жизнь</h6>
+          <h6 className="text-lg font-semibold mb-2">{t("footer.title_4")}</h6>
           <Link to="#" className="block mb-2 hover:text-gray-400">
-            Общественный организации
+            {t("footer.title_4_item_1")}
           </Link>
           <Link to="#" className="block mb-2 hover:text-gray-400">
-            Достижения студентов
+            {t("footer.title_4_item_2")}
           </Link>
           <Link to="#" className="block mb-2 hover:text-gray-400">
-            Жильё и питание
+            {t("footer.title_4_item_3")}
           </Link>
           <Link to="#" className="block mb-2 hover:text-gray-400">
-            Спортивные клубы, спартакиады <br /> и соревнования
+            {t("footer.title_4_item_4")}
           </Link>
           <Link to="#" className="block mb-2 hover:text-gray-400">
-            Клубы
+            {t("footer.title_4_item_5")}
           </Link>
           <Link to="#" className="block mb-2 hover:text-gray-400">
-            Здоровье и медицина
+            {t("footer.title_4_item_6")}
           </Link>
           <Link to="#" className="block hover:text-gray-400">
-            3D тур
+            {t("footer.title_4_item_7")}
           </Link>
         </nav>
         <nav className="w-full sm:w-1/2 md:w-1/3 lg:w-auto">
-          <h6 className="text-lg font-semibold mb-2">О нас</h6>
+          <h6 className="text-lg font-semibold mb-2">{t("footer.title_5")}</h6>
           <Link to="#" className="block mb-2 hover:text-gray-400">
-            Об университете
+            {t("footer.title_5_item_1")}
           </Link>
           <Link to="#" className="block mb-2 hover:text-gray-400">
-            Уставы и документы
+            {t("footer.title_5_item_2")}
           </Link>
           <Link to="#" className="block mb-2 hover:text-gray-400">
-            Руководство
+            {t("footer.title_5_item_3")}
           </Link>
           <Link to="#" className="block mb-2 hover:text-gray-400">
-            Структура
+            {t("footer.title_5_item_4")}
           </Link>
           <Link to="#" className="block mb-2 hover:text-gray-400">
-            Вакансии
+            {t("footer.title_5_item_5")}
           </Link>
           <Link to="#" className="block mb-2 hover:text-gray-400">
-            Объявления и контакты
+            {t("footer.title_5_item_6")}
           </Link>
           <Link to="#" className="block hover:text-gray-400">
-            Новости и события
+            {t("footer.title_5_item_7")}
           </Link>
         </nav>
 
         <nav className="w-full sm:w-1/2 md:w-1/3 lg:w-auto">
-          <h6 className="text-lg font-semibold mb-2">Департаменты</h6>
+          <h6 className="text-lg font-semibold mb-2">{t("footer.title_6")}</h6>
           <Link to="#" className="block mb-2 hover:text-gray-400">
-            Департамент образования и управление качеством
+            {t("footer.title_6_item_1")}
           </Link>
           <Link to="#" className="block mb-2 hover:text-gray-400">
-            Институт повышении квалификации и инновации
+            {t("footer.title_6_item_2")}
           </Link>
           <Link to="#" className="block mb-2 hover:text-gray-400">
-            Офис международных отношений
+            {t("footer.title_6_item_3")}
           </Link>
           <Link to="#" className="block mb-2 hover:text-gray-400">
-            Офис по работе с выпускниками
+            {t("footer.title_6_item_4")}
           </Link>
           <Link to="#" className="block hover:text-gray-400">
-            Студенческий отдел
+            {t("footer.title_6_item_5")}
           </Link>
         </nav>
       </footer>

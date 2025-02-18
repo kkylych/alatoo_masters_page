@@ -1,27 +1,29 @@
 import { motion } from "framer-motion";
+import { useTranslation } from "react-i18next";
 
 const MastersInfo = () => {
+  const { t } = useTranslation();
   const information = [
     {
-      title: "Рабочие дни",
-      description: "Понедельник-пятница, с 9:00 до 17:00",
+      title: t("mastersInfo.informationItemTitle_1"),
+      description: t("mastersInfo.informationItemDescription_1"),
     },
     {
-      title: "Срок обучения",
-      description: "2 года (2,5 года для дистанционного обучения)",
+      title: t("mastersInfo.informationItemTitle_2"),
+      description: t("mastersInfo.informationItemDescription_2"),
     },
     {
-      title: "Документы для поступления",
-      description: "принимаются с 6 июля по 16 сентября 2024 г.",
+      title: t("mastersInfo.informationItemTitle_3"),
+      description: t("mastersInfo.informationItemDescription_3"),
     },
   ];
 
   const documents = [
-    "Диплом бакалавра (оригинал)",
-    "2 фотографии 3x4",
-    "Копия паспорта (оригинал для просмотра)",
-    "Личный листок по учету кадров",
-    "30% от контракта",
+    t("mastersInfo.documentItem_1"),
+    t("mastersInfo.documentItem_2"),
+    t("mastersInfo.documentItem_3"),
+    t("mastersInfo.documentItem_4"),
+    t("mastersInfo.documentItem_5"),
   ];
 
   return (
@@ -40,10 +42,11 @@ const MastersInfo = () => {
         <div className="px-8 mx-auto gap-12 text-center max-w-full overflow-hidden md:pt-10 pt-7 flex flex-col items-center">
           <h2 className="text-2xl lg:text-5xl font-semibold text-[#2d2753] flex items-center justify-center gap-3">
             <i className="bx bx-info-circle text-[#cf1421] text-5xl"></i>
-            Основные сведения
+            {/* Основные сведения */}
+            {t("mastersInfo.informationTitle")}
           </h2>
           <div className="flex flex-col md:flex-row gap-6 mt-15 flex-wrap">
-            {information.map((feature, index) => (
+            {information.map((item, index) => (
               <motion.div
                 key={index}
                 className="flex-1 px-3"
@@ -55,10 +58,10 @@ const MastersInfo = () => {
                   style={{ boxShadow: "0 10px 28px rgba(0,0,0,.08)" }}
                 >
                   <p className="font-semibold text-2xl text-[#cf1421] transition-colors duration-300 hover:text-[#2d2753]">
-                    {feature.title}
+                    {item.title}
                   </p>
                   <p className="mt-4 text-xl font-light text-[#333333]">
-                    {feature.description}
+                    {item.description}
                   </p>
                 </div>
               </motion.div>
@@ -81,7 +84,8 @@ const MastersInfo = () => {
         <div className="container px-8 mx-auto text-center max-w-full overflow-hidden md:pt-10 pt-7 flex flex-col items-center">
           <h2 className="text-2xl lg:text-5xl font-semibold text-[#2d2753] flex items-center justify-center gap-3">
             <i className="bx bxs-file-doc text-[#cf1421] text-5xl"></i>
-            Документы для поступления
+            {/* Документы для поступления */}
+            {t("mastersInfo.documentTitle")}
           </h2>
           <div className="flex flex-col md:flex-row mt-15 flex-wrap justify-center">
             {documents.map((item, index) => (
@@ -145,15 +149,17 @@ const MastersInfo = () => {
               </motion.span>
 
               <h3 className="md:text-5xl font-bold text-[#2d2753] text-3xl transition-colors duration-300 group-hover:text-white flex justify-center">
-                На заметку иностранным гражданам!
+                {/* На заметку иностранным гражданам! */}
+                {t("mastersInfo.warningTitle")}
               </h3>
 
               <div className="px-8 text-xl lg:text-2xl mt-6 font-light text-[#333333] leading-relaxed transition-colors duration-300 group-hover:text-white/90 max-w-2xl mx-auto">
                 <p className="flex justify-center items-center">
-                  Представить перевод паспорта, диплома и его вкладыша на
+                  {/* Представить перевод паспорта, диплома и его вкладыша на
                   кыргызский либо на русский языки (перевод должен быть
                   подтвержден сертифицированным нотариусом или переводческой
-                  фирмой).
+                  фирмой). */}
+                  {t("mastersInfo.warningDescription")}
                 </p>
               </div>
             </div>

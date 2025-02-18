@@ -1,7 +1,9 @@
 import { motion } from "framer-motion";
 import economsPhoto from "../assets/economs_photo.jpg";
+import { useTranslation } from "react-i18next";
 
 const Economics = () => {
+  const { t } = useTranslation();
   return (
     <>
       <section className="px-8 pt-20 pb-20">
@@ -29,10 +31,11 @@ const Economics = () => {
 
           <div className="text-center lg:text-left lg:w-1/2 sm:pb-12">
             <h1 className="text-2xl lg:text-5xl xl:text-6xl font-bold leading-none text-[#2d2753]">
-              Экономика
+              {/* Экономика */}
+              {t("economics.title")}
             </h1>
             <p className="text-lg lg:text-xl mt-6 font-light text-[#333333]">
-              Эта программа дает ценный опыт в качественных и количественных
+              {/* Эта программа дает ценный опыт в качественных и количественных
               исследованиях, а также готовит специалистов по экономическому{" "}
               <br />
               развитию и научных исследователей (Ph.D). Обучаясь здесь, можно
@@ -42,7 +45,8 @@ const Economics = () => {
               принимаются от выпускников экономики, менеджмента, международных
               отношений и прикладной математики. Участвовать могут студенты с
               высокими академическими результатами за 1-й курс. Требуется
-              уровень английского B2: TOEFL IBT 95 или IELTS 7.
+              уровень английского B2: TOEFL IBT 95 или IELTS 7. */}
+              {t("economics.description")}
             </p>
           </div>
         </motion.div>

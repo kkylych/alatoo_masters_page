@@ -1,7 +1,9 @@
 import { motion } from "framer-motion";
 import mangPhoto from "../assets/mang_photo.jpg";
+import { useTranslation } from "react-i18next";
 
 const Management = () => {
+  const { t } = useTranslation();
   return (
     <>
       <section className="px-8 pt-20 pb-20">
@@ -29,10 +31,11 @@ const Management = () => {
 
           <div className="text-center lg:text-left lg:w-1/2 sm:pb-12">
             <h1 className="text-2xl lg:text-5xl xl:text-6xl font-bold leading-none text-[#2d2753]">
-              Менеджмент
+              {/* Менеджмент */}
+              {t("management.title")}
             </h1>
             <p className="text-lg lg:text-xl mt-6 font-light text-[#333333]">
-              Магистерская программа по Менеджменту (бизнес-аналитика)
+              {/* Магистерская программа по Менеджменту (бизнес-аналитика)
               Международного университета Ала-Тоо предоставит вам все
               необходимые знания и навыки для успешной карьеры в сфере
               бизнес-аналитики. Программа включает комплексное сочетание
@@ -41,7 +44,8 @@ const Management = () => {
               принимать обоснованные решения и разрабатывать стратегии для
               бизнеса. Обучение охватывает ключевые аспекты анализа данных,
               управления проектами, цифровой трансформации и бизнес-стратегий,
-              готовя выпускников к востребованным позициям в ведущих компаниях.
+              готовя выпускников к востребованным позициям в ведущих компаниях. */}
+              {t("management.description")}
             </p>
           </div>
         </motion.div>

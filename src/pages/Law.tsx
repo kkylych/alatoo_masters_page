@@ -1,7 +1,9 @@
 import { motion } from "framer-motion";
 import lawPhoto from "../assets/law_photo.jpg";
+import { useTranslation } from "react-i18next";
 
 const Law = () => {
+  const { t } = useTranslation();
   return (
     <>
       <section className="px-8 pt-20 pb-20">
@@ -29,10 +31,11 @@ const Law = () => {
 
           <div className="text-center lg:text-left lg:w-1/2 sm:pb-12">
             <h1 className="text-2xl lg:text-5xl xl:text-6xl font-bold leading-none text-[#2d2753]">
-              Юриспруденция
+              {/* Юриспруденция */}
+              {t("law.title")}
             </h1>
             <p className="text-lg lg:text-xl mt-6 font-light text-[#333333]">
-              Программа Юриспруденция (Международное право и бизнес) предлагает
+              {/* Программа Юриспруденция (Международное право и бизнес) предлагает
               комплексное изучение юридических аспектов международного бизнеса.
               В рамках обучения вы освоите ключевые вопросы, связанные с
               глобальными коммерческими операциями, технологическим и
@@ -43,7 +46,8 @@ const Law = () => {
               современные вызовы международного права. Карьерные перспективы
               включают работу в международных компаниях, юридических фирмах,
               государственных учреждениях, а также в сфере консалтинга и
-              предпринимательства.
+              предпринимательства. */}
+              {t("law.description")}
             </p>
           </div>
         </motion.div>

@@ -1,7 +1,9 @@
 import { motion } from "framer-motion";
 import comsciPhoto from "../assets/comsci_photo.jpg";
+import { useTranslation } from "react-i18next";
 
 const ComputerScience = () => {
+  const { t } = useTranslation();
   return (
     <>
       <section className="px-8 pt-20 pb-20">
@@ -29,17 +31,19 @@ const ComputerScience = () => {
 
           <div className="text-center lg:text-left lg:w-1/2 sm:pb-12">
             <h1 className="text-2xl lg:text-5xl xl:text-6xl font-bold leading-none text-[#2d2753]">
-              Информатика и вычислительная техника
+              {/* Информатика и вычислительная техника */}
+              {t("computerScience.title")}
             </h1>
             <p className="text-lg lg:text-xl mt-6 font-light text-[#333333]">
-              Направление Информатики и вычислительной техники готовит
+              {/* Направление Информатики и вычислительной техники готовит
               специалистов, способных разрабатывать автоматизированные системы
               обработки информации с применением ИИ, сетевых технологий, баз
               данных и современных IT-решений. Обучение ведется на английском
               языке с использованием передовой исследовательской базы,
               позволяющей магистрантам реализовывать научные и прикладные
               проекты. Выпускники-магистры востребованы на высокооплачиваемых
-              позициях в Кыргызстане и за рубежом.
+              позициях в Кыргызстане и за рубежом. */}
+              {t("computerScience.description")}
             </p>
           </div>
         </motion.div>

@@ -1,7 +1,10 @@
 import { motion } from "framer-motion";
 import lingPhoto from "../assets/ling_photo.jpg";
+import { useTranslation } from "react-i18next";
 
 const Linguistics = () => {
+  const { t } = useTranslation();
+
   return (
     <>
       <section className="px-8 pt-20 pb-20">
@@ -29,10 +32,11 @@ const Linguistics = () => {
 
           <div className="text-center lg:text-left lg:w-1/2 sm:pb-12">
             <h1 className="text-2xl lg:text-5xl xl:text-6xl font-bold leading-none text-[#2d2753]">
-              Лингвистика
+              {/* Лингвистика */}
+              {t("linguistics.title")}
             </h1>
             <p className="text-lg lg:text-xl mt-6 font-light text-[#333333]">
-              Направление Лингвистика нацелено на уникальную образовательную
+              {/* Направление Лингвистика нацелено на уникальную образовательную
               программу, которая обеспечивает студентам широкие знания и навыки
               в области языковедения и языкознания, перевода и межкультурной
               коммуникации. Наши выпускники могут работать в компаниях,
@@ -42,7 +46,8 @@ const Linguistics = () => {
               справочников, энциклопедий, сайтов в Интернете; работать
               переводчиками или преподавателями. Наша цель — развивать у
               студентов критическое мышление, творческий подход к решению задач
-              и способность к эффективной коммуникации на различных языках.
+              и способность к эффективной коммуникации на различных языках. */}
+              {t("linguistics.description")}
             </p>
           </div>
         </motion.div>

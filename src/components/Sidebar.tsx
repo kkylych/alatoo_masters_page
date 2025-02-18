@@ -1,8 +1,10 @@
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { NavLink, useLocation } from "react-router-dom";
+import { useTranslation } from "react-i18next";
 
 const Sidebar = () => {
+  const { t } = useTranslation();
   const [isSidebarOpen, setIsSidebarOpen] = useState<boolean>(false);
   const location = useLocation();
 
@@ -11,23 +13,23 @@ const Sidebar = () => {
     closed: { x: "-100%", transition: { duration: 0.2 } },
   };
 
-  const menuItems= [
+  const menuItems = [
     {
       link: "/masters/computer-science",
-      label: "Информатика и вычислительная техника",
+      label: t("sidebar.label_1"),
     },
-    { link: "/masters/economics", label: "Экономика" },
+    { link: "/masters/economics", label: t("sidebar.label_2") },
     {
       link: "/masters/international-relations",
-      label: "Международные отношения",
+      label: t("sidebar.label_3"),
     },
-    { link: "/masters/management", label: "Менеджмент" },
-    { link: "/masters/philology", label: "Филология" },
-    { link: "/masters/law", label: "Юриспруденция" },
-    { link: "/masters/pedagogy", label: "Педагогика" },
-    { link: "/masters/journalism", label: "Журналистика" },
-    { link: "/masters/psychology", label: "Психология" },
-    { link: "/masters/linguistics", label: "Лингвистика" },
+    { link: "/masters/management", label: t("sidebar.label_4") },
+    { link: "/masters/philology", label: t("sidebar.label_5") },
+    { link: "/masters/law", label: t("sidebar.label_6") },
+    { link: "/masters/pedagogy", label: t("sidebar.label_7") },
+    { link: "/masters/journalism", label: t("sidebar.label_8") },
+    { link: "/masters/psychology", label: t("sidebar.label_9") },
+    { link: "/masters/linguistics", label: t("sidebar.label_10") },
   ];
 
   return (

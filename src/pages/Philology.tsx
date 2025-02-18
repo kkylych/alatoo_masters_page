@@ -1,7 +1,9 @@
 import { motion } from "framer-motion";
 import philPhoto from "../assets/phil_photo.jpg";
+import { useTranslation } from "react-i18next";
 
 const Philology = () => {
+  const { t } = useTranslation();
   return (
     <>
       <section className="px-8 pt-20 pb-20">
@@ -29,10 +31,11 @@ const Philology = () => {
 
           <div className="text-center lg:text-left lg:w-1/2 sm:pb-12">
             <h1 className="text-2xl lg:text-5xl xl:text-6xl font-bold leading-none text-[#2d2753]">
-              Филология
+              {/* Филология */}
+              {t("philology.title")}
             </h1>
             <p className="text-lg lg:text-xl mt-6 font-light text-[#333333]">
-              Программа сочетает изучение языков, литературы, культуры и
+              {/* Программа сочетает изучение языков, литературы, культуры и
               коммуникации, формируя специалистов в лингвистике, переводе,
               преподавании и медиаиндустрии. Студенты овладевают английским,
               кыргызским, русским, турецким, немецким и французским языками,
@@ -43,7 +46,8 @@ const Philology = () => {
               межкультурной коммуникации. Обучение развивает критическое
               мышление, аналитические навыки и глубокое понимание языковых
               процессов. Диплом открывает возможности в образовании, медиа,
-              науке, культуре и международных компаниях.
+              науке, культуре и международных компаниях. */}
+              {t("philology.description")}
             </p>
           </div>
         </motion.div>

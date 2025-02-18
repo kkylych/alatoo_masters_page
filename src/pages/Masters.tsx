@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
 import mastersPhoto from "../assets/masters_photo.jpg";
 import MastersInfo from "./MastersInfo";
+import { useTranslation } from "react-i18next";
 
 const Masters = () => {
   const buttonVariants = {
@@ -12,6 +13,8 @@ const Masters = () => {
     tap: { scale: 0.95 },
     initial: { scale: 1, backgroundColor: "#2d2753" },
   };
+
+  const { t } = useTranslation();
 
   return (
     <>
@@ -30,14 +33,16 @@ const Masters = () => {
         >
           <div className="text-center lg:text-left lg:w-1/2 sm:pb-12">
             <h1 className="text-2xl lg:text-5xl xl:text-6xl font-bold leading-none text-[#2d2753]">
-              Магистратура
+              {/* Магистратура */}
+              {t("masters.title")}
             </h1>
             <p className="text-xl lg:text-2xl mt-6 font-light text-[#333333]">
-              Магистратура — это вторая ступень высшего образования,
+              {/* Магистратура — это вторая ступень высшего образования,
               фокусирующаяся на углублении знаний и развитии исследовательских
               навыков. Степень «магистр» присуждается после освоения программы и
               защиты диссертации. Включает научные семинары и исследовательские
-              мероприятия.
+              мероприятия. */}
+              {t("masters.description")}
             </p>
             <p className="mt-8 md:mt-12">
               <motion.button
@@ -48,7 +53,8 @@ const Masters = () => {
                 whileHover="hover"
                 whileTap="tap"
               >
-                Подробнее
+                {/* Подробнее */}
+                {t("masters.button")}
               </motion.button>
             </p>
           </div>

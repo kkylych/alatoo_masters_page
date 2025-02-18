@@ -1,41 +1,42 @@
 import { motion } from "framer-motion";
 import pedPhoto from "../assets/ped_photo.jpg";
 import degreePhoto from "../assets/degree_photo.jpg";
+import { useTranslation } from "react-i18next";
 
 const Pedagogy = () => {
+  const { t } = useTranslation();
+
   const information = [
-    { description: "Консультирование в области образования" },
+    { description: t("pedagogy.careerInformationItem_1") },
     {
-      description:
-        "Исследовательская деятельность в университетах и научных центрах",
+      description: t("pedagogy.careerInformationItem_2"),
     },
-    { description: "Управление образовательными проектами и программами" },
+    { description: t("pedagogy.careerInformationItem_3") },
     {
-      description:
-        "Работа в образовательных учреждениях (учителя, преподаватели, воспитатели)",
+      description: t("pedagogy.careerInformationItem_4"),
     },
   ];
 
   const dualDegreeInformation = [
-    { description: "Получить два диплома", icon: "bxs-book-bookmark" },
+    { description: t("pedagogy.opportunityItem_1"), icon: "bxs-book-bookmark" },
     {
-      description: "Углубить свои знания в международных методах образования",
+      description: t("pedagogy.opportunityItem_2"),
       icon: "bx-book-open",
     },
     {
-      description: "Расширить сеть профессиональных связей и культурный опыт",
+      description: t("pedagogy.opportunityItem_3"),
       icon: "bxs-chat",
     },
     {
-      description: "Изучить новые педагогические практики и подходы",
+      description: t("pedagogy.opportunityItem_4"),
       icon: "bx-bulb",
     },
     {
-      description: "Принять участие в международных исследовательских проектах",
+      description: t("pedagogy.opportunityItem_5"),
       icon: "bxs-user-check",
     },
     {
-      description: "Развить языковые навыки и межкультурную компетенцию",
+      description: t("pedagogy.opportunityItem_6"),
       icon: "bx-text",
     },
   ];
@@ -60,10 +61,11 @@ const Pedagogy = () => {
           </div>
           <div className="text-center lg:text-left">
             <h1 className="text-2xl lg:text-5xl xl:text-6xl font-bold leading-none text-[#2d2753]">
-              Педагогика
+              {/* Педагогика */}
+              {t("pedagogy.title")}
             </h1>
             <p className="text-lg lg:text-xl mt-6 font-light text-[#333333]">
-              Магистратура по педагогике — это интенсивная программа, нацеленная
+              {/* Магистратура по педагогике — это интенсивная программа, нацеленная
               на подготовку специалистов, обладающих глубокими знаниями в
               области образовательных технологий, педагогической психологии и
               управленческих навыков. Она сочетает в себе теоретическое обучение
@@ -74,7 +76,8 @@ const Pedagogy = () => {
               проектах. Исследования могут быть направлены на различные аспекты
               педагогики, включая оценку эффективности образовательных
               технологий, изучение социальных факторов, влияющих на обучение, и
-              разработку новых образовательных методик.
+              разработку новых образовательных методик. */}
+              {t("pedagogy.description")}
             </p>
           </div>
         </motion.div>
@@ -83,10 +86,12 @@ const Pedagogy = () => {
       <section className="px-16 mt-4 text-center">
         <h2 className="text-2xl lg:text-5xl font-semibold text-[#2d2753] flex items-center justify-center gap-3">
           <i className="bx bx-info-circle text-[#cf1421] text-5xl"></i>
-          Возможности карьерного роста
+          {/* Возможности карьерного роста */}
+          {t("pedagogy.careerTitle")}
         </h2>
         <h5 className="pt-10 text-xl lg:text-3xl font-semibold text-[#2d2753]">
-          Выпускники программы могут выбрать различные карьерные пути, включая:
+          {/* Выпускники программы могут выбрать различные карьерные пути, включая: */}
+          {t("pedagogy.careerSubTitle")}
         </h5>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mt-10">
           {information.map((item, index) => (
@@ -107,15 +112,18 @@ const Pedagogy = () => {
       <section className="px-16 text-center mt-18">
         <h2 className="text-2xl lg:text-5xl font-semibold text-[#2d2753] flex items-center justify-center gap-3">
           <i className="bx bx-info-circle text-[#cf1421] text-5xl"></i>
-          Дополнительные возможности
+          {/* Дополнительные возможности */}
+          {t("pedagogy.opportunityTitle")}
         </h2>
         <h5 className="pt-10 text-xl lg:text-3xl font-semibold text-[#cf1421]">
-          Двойной диплом
+          {/* Двойной диплом */}
+          {t("pedagogy.opportunitySubTitle")}
         </h5>
         <p className="text-xl lg:text-2xl mt-6 font-extralight text-[#333333] leading-relaxed">
-          Одной из уникальных возможностей нашей программы является получение
+          {/* Одной из уникальных возможностей нашей программы является получение
           двойного диплома. Магистранты могут подать в университет Северной
-          Америки, что позволяет им:
+          Америки, что позволяет им: */}
+          {t("pedagogy.opportunityDescription")}
         </p>
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center mt-10">
           <div className="w-full h-[450px]">
@@ -143,10 +151,12 @@ const Pedagogy = () => {
           </div>
         </div>
         <p className="text-xl lg:text-2xl mt-8 font-extralight text-[#333333] leading-relaxed pb-10">
-          Программа двойного диплома включает учебные модули, совместные проекты
+          {/* Программа двойного диплома включает учебные модули, совместные проекты
           и другие формы сотрудничества. Это не только улучшает академическую
           подготовку магистров, но и делает их более привлекательными для
-          работодателей на международном уровне.
+          работодателей на международном уровне. */}
+
+          {t("pedagogy.opportunitySubDescription")}
         </p>
       </section>
     </>

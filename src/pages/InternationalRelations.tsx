@@ -1,7 +1,9 @@
 import { motion } from "framer-motion";
 import interRelPhoto from "../assets/interRel_photo.jpg";
+import { useTranslation } from "react-i18next";
 
 const InternationalRelations = () => {
+  const { t } = useTranslation();
   return (
     <>
       <section className="px-8 pt-20 pb-20 ">
@@ -29,10 +31,11 @@ const InternationalRelations = () => {
 
           <div className="text-center lg:text-left lg:w-1/2 sm:pb-12">
             <h1 className="text-2xl lg:text-5xl xl:text-6xl font-bold leading-none text-[#2d2753]">
-              Международные отношения
+              {/* Международные отношения */}
+              {t("internationalRelations.title")}
             </h1>
             <p className="text-lg lg:text-xl mt-6 font-light text-[#333333]">
-              Программа «Международные отношения» обеспечивает междисциплинарное
+              {/* Программа «Международные отношения» обеспечивает междисциплинарное
               исследование глобальной динамики с упором на такие ключевые
               области, как международная политика, международное развитие,
               глобальное управление, экономические отношения и исследования
@@ -40,7 +43,8 @@ const InternationalRelations = () => {
               многосторонности, прав человека и устойчивости, дает студентам
               знания и навыки, необходимые для успешной карьеры в дипломатии,
               политическом анализе, международном развитии, разрешении
-              конфликтов и международном праве.
+              конфликтов и международном праве. */}
+              {t("internationalRelations.description")}
             </p>
           </div>
         </motion.div>

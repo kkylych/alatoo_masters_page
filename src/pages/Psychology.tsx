@@ -1,7 +1,9 @@
 import { motion } from "framer-motion";
 import psyPhoto from "../assets/psy_photo.jpg";
+import { useTranslation } from "react-i18next";
 
 const Psychology = () => {
+  const { t } = useTranslation();
   return (
     <>
       <section className="px-8 pt-20 pb-20">
@@ -29,16 +31,18 @@ const Psychology = () => {
 
           <div className="text-center lg:text-left lg:w-1/2 sm:pb-12">
             <h1 className="text-2xl lg:text-5xl xl:text-6xl font-bold leading-none text-[#2d2753]">
-              Психология
+              {/* Психология */}
+              {t("psychology.title")}
             </h1>
             <p className="text-lg lg:text-xl mt-6 font-light text-[#333333]">
-              Магистерская программа «Психология» предоставляет магистрантам
+              {/* Магистерская программа «Психология» предоставляет магистрантам
               глубокое понимание психологических теорий и концепций, развивает
               практические навыки работы с данными и клиентами, поддерживает
               интердисциплинарный подход к исследованиям, поощряет участие в
               научных проектах и готовит к разнообразным карьерным возможностям
               в области психологии, включая психотерапию, образование,
-              управление персоналом и исследования.
+              управление персоналом и исследования. */}
+              {t("psychology.description")}
             </p>
           </div>
         </motion.div>

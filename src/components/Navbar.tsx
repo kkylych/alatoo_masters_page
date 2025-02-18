@@ -2,8 +2,11 @@ import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import Logo from "../assets/logo.png";
 import { NavLink } from "react-router-dom";
+import { useTranslation } from "react-i18next";
+import LanguageButton from "./LanguageButton";
 
 const Navbar = () => {
+  const { t } = useTranslation();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   const menuVariants = {
@@ -17,7 +20,7 @@ const Navbar = () => {
   };
 
   return (
-    <nav className="sticky top-0 left-0 flex justify-between items-center text-white py-4 px-8 md:px-18 bg-[#2d2753] drop-shadow-md z-100">
+    <nav className="sticky top-0 left-0 flex justify-between items-center text-white py-4 px-8 md:px-20 bg-[#2d2753] drop-shadow-md z-100">
       <NavLink to="/">
         <motion.img
           src={Logo}
@@ -35,7 +38,7 @@ const Navbar = () => {
           whileHover="hover"
           whileTap="tap"
         >
-          <NavLink to="/about">О нас</NavLink>
+          <NavLink to="/about">{t("navbar.link_1")}</NavLink>
         </motion.li>
         <motion.li
           className="p-2 rounded-md cursor-pointer"
@@ -43,7 +46,7 @@ const Navbar = () => {
           whileHover="hover"
           whileTap="tap"
         >
-          <NavLink to="/masters">Магистратура</NavLink>
+          <NavLink to="/masters">{t("navbar.link_2")}</NavLink>
         </motion.li>
         <motion.li
           className="p-2 rounded-md cursor-pointer"
@@ -51,7 +54,7 @@ const Navbar = () => {
           whileHover="hover"
           whileTap="tap"
         >
-          <NavLink to="/phd">PhD</NavLink>
+          <NavLink to="/phd">{t("navbar.link_3")}</NavLink>
         </motion.li>
         <motion.li
           className="p-2 rounded-md cursor-pointer"
@@ -59,7 +62,7 @@ const Navbar = () => {
           whileHover="hover"
           whileTap="tap"
         >
-          <NavLink to="/aspirantura">Аспирантура</NavLink>
+          <NavLink to="/aspirantura">{t("navbar.link_4")}</NavLink>
         </motion.li>
         <motion.li
           className="p-2 rounded-md cursor-pointer"
@@ -67,7 +70,7 @@ const Navbar = () => {
           whileHover="hover"
           whileTap="tap"
         >
-          <NavLink to="/publications">Публикации</NavLink>
+          <NavLink to="/publications">{t("navbar.link_5")}</NavLink>
         </motion.li>
         <motion.li
           className="p-2 rounded-md cursor-pointer"
@@ -75,7 +78,7 @@ const Navbar = () => {
           whileHover="hover"
           whileTap="tap"
         >
-          <NavLink to="/admissions">Поступление</NavLink>
+          <NavLink to="/admissions">{t("navbar.link_6")}</NavLink>
         </motion.li>
       </ul>
 
@@ -87,18 +90,22 @@ const Navbar = () => {
         ></motion.i>
         <motion.input
           type="text"
-          placeholder="Поиск..."
+          placeholder={t("navbar.placeholder")}
           className="py-2 pl-10 rounded-xl border-2 border-[#cf1421] focus:bg-[#3c2a47] focus:outline-[#cf1421] text-white"
           whileFocus={{ scale: 1.05 }}
         />
       </div>
 
-      <motion.i
-        className="bx bx-menu block xl:before:hidden text-5xl cursor-pointer text-white"
-        onClick={() => setIsMenuOpen(!isMenuOpen)}
-        whileHover={{ scale: 0.9 }}
-        whileTap={{ scale: 0.9 }}
-      ></motion.i>
+      <div className="flex items-center gap-5">
+          <LanguageButton />
+        
+        <motion.i
+          className="bx bx-menu block xl:before:hidden text-5xl cursor-pointer text-white"
+          onClick={() => setIsMenuOpen(!isMenuOpen)}
+          whileHover={{ scale: 0.9 }}
+          whileTap={{ scale: 0.9 }}
+        ></motion.i>
+      </div>
 
       <AnimatePresence>
         {isMenuOpen && (
@@ -116,7 +123,7 @@ const Navbar = () => {
               transition={{ duration: 0.2 }}
             >
               <NavLink onClick={() => setIsMenuOpen(false)} to="/about">
-                О нас
+                {t("navbar.link_1")}
               </NavLink>
             </motion.li>
             <motion.li
@@ -125,7 +132,7 @@ const Navbar = () => {
               transition={{ duration: 0.2 }}
             >
               <NavLink onClick={() => setIsMenuOpen(false)} to="/masters">
-                Магистратура
+                {t("navbar.link_2")}
               </NavLink>
             </motion.li>
             <motion.li
@@ -134,7 +141,7 @@ const Navbar = () => {
               transition={{ duration: 0.2 }}
             >
               <NavLink onClick={() => setIsMenuOpen(false)} to="/phd">
-                PhD
+                {t("navbar.link_3")}
               </NavLink>
             </motion.li>
             <motion.li
@@ -143,7 +150,7 @@ const Navbar = () => {
               transition={{ duration: 0.2 }}
             >
               <NavLink onClick={() => setIsMenuOpen(false)} to="/aspirantura">
-                Аспирантура
+                {t("navbar.link_4")}
               </NavLink>
             </motion.li>
             <motion.li
@@ -152,7 +159,7 @@ const Navbar = () => {
               transition={{ duration: 0.2 }}
             >
               <NavLink onClick={() => setIsMenuOpen(false)} to="/publications">
-                Публикации
+                {t("navbar.link_5")}
               </NavLink>
             </motion.li>
             <motion.li
@@ -161,7 +168,7 @@ const Navbar = () => {
               transition={{ duration: 0.2 }}
             >
               <NavLink onClick={() => setIsMenuOpen(false)} to="/admissions">
-                Поступление
+                {t("navbar.link_6")}
               </NavLink>
             </motion.li>
           </motion.div>
