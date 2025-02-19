@@ -119,35 +119,35 @@ const Footer:React.FC = () => {
           <Link
             to="https://www.instagram.com/alatoo.edu.kg/"
             target="_blank"
-            className="text-white hover:text-[#cf1421] text-2xl"
+            className="text-white hover:text-[var(--secondary-color)] text-2xl"
           >
             <i className="bx bxl-instagram"></i>
           </Link>
           <Link
             to="https://www.youtube.com/@aiutv1996"
             target="_blank"
-            className="text-white hover:text-[#cf1421] text-2xl"
+            className="text-white hover:text-[var(--secondary-color)] text-2xl"
           >
             <i className="bx bxl-youtube"></i>
           </Link>
           <Link
             to="https://www.linkedin.com/school/alatoo-international-university/"
             target="_blank"
-            className="text-white hover:text-[#cf1421] text-2xl"
+            className="text-white hover:text-[var(--secondary-color)] text-2xl"
           >
             <i className="bx bxl-linkedin-square"></i>
           </Link>
           <Link
             to="https://x.com/alatooedukg"
             target="_blank"
-            className="text-white hover:text-[#cf1421] text-2xl"
+            className="text-white hover:text-[var(--secondary-color)] text-2xl"
           >
             <i className="bx bxl-twitter"></i>{" "}
           </Link>
           <Link
             to="https://vk.com/aiuedukg"
             target="_blank"
-            className="text-white hover:text-[#cf1421] text-2xl"
+            className="text-white hover:text-[var(--secondary-color)] text-2xl"
           >
             <i className="bx bxl-vk"></i>{" "}
           </Link>

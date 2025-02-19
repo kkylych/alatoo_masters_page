@@ -2,6 +2,22 @@
 @import "tailwindcss";
 @tailwind utilities;
 
+:root {
+  --primary-color: #2d2753;
+  --secondary-color: #cf1421;
+  --background-color: #f2f2f2;
+  --text-color: #333333;
+}
+
+
+/* TODO: Dark Mode */
+/* :root {
+  --primary-color: #34495e;
+  --secondary-color: #cf1421; 
+  --background-color: #121212; 
+  --text-color: #f5f5f5; 
+} */
+
 body {
   font-family: "Montserrat", serif;
   font-weight: 500;

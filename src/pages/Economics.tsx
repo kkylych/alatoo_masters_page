@@ -32,10 +32,10 @@ const Economics: React.FC = () => {
           </div>
 
           <div className="text-center lg:text-left lg:w-1/2 sm:pb-12">
-            <h1 className="text-2xl lg:text-5xl xl:text-6xl font-bold leading-none text-[#2d2753]">
+            <h1 className="text-2xl lg:text-5xl xl:text-6xl font-bold leading-none text-[var(--primary-color)]">
               {t("economics.title")}
             </h1>
-            <p className="text-lg lg:text-xl mt-6 font-light text-[#333333]">
+            <p className="text-lg lg:text-xl mt-6 font-light text-[var(--text-color)]">
               {t("economics.description")}
             </p>
           </div>

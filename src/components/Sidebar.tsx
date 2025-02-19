@@ -55,7 +55,7 @@ const Sidebar: React.FC = () => {
       <AnimatePresence>
         {isSidebarOpen && (
           <motion.aside
-            className="fixed top-24 left-0 h-full w-64 bg-[#2d2753] text-white flex flex-col p-4 z-50"
+            className="fixed top-24 left-0 h-full w-64 bg-[var(--primary-color)] text-white flex flex-col p-4 z-50"
             initial="closed"
             animate="open"
             exit="closed"
@@ -73,15 +73,15 @@ const Sidebar: React.FC = () => {
                 return (
                   <motion.li
                     key={index}
-                    className={`text-center py-1 cursor-pointer rounded-md pointer-events-auto ${
+                    className={`text-center cursor-pointer rounded-md pointer-events-auto ${
                       isActive
-                        ? "bg-[#cf1421] text-white"
-                        : "hover:bg-[#cf1421] transition-all"
+                        ? "bg-[var(--secondary-color)] text-white"
+                        : "hover:bg-[var(--secondary-color)] transition-all"
                     }`}
                     transition={{ duration: 0.2 }}
                     onClick={() => setIsSidebarOpen(false)}
                   >
-                    <NavLink to={item.link}>{item.label}</NavLink>
+                    <NavLink to={item.link} className="w-full h-full block py-1">{item.label}</NavLink>
                   </motion.li>
                 );
               })}
@@ -93,11 +93,11 @@ const Sidebar: React.FC = () => {
       {!isSidebarOpen && (
         <motion.button
           onClick={() => setIsSidebarOpen(true)}
-          initial={{ opacity: 0.5, scale: 1, backgroundColor: "#2d2753" }}
+          initial={{ opacity: 0.5, scale: 1, backgroundColor: "var(--primary-color)" }}
           whileHover={{
             opacity: 1,
             scale: 1.1,
-            backgroundColor: "#cf1421",
+            backgroundColor: "var(--secondary-color)",
             transition: { duration: 0.2 },
           }}
           className="cursor-pointer fixed top-30 left-5 w-12 h-12 flex items-center justify-center text-white rounded-full z-50"

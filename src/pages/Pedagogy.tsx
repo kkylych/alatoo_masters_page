@@ -1,4 +1,4 @@
-import { motion } from "framer-motion";
+import { motion, Variants } from "framer-motion";
 import pedPhoto from "../assets/ped_photo.webp";
 import degreePhoto from "../assets/degree_photo.webp";
 import { useTranslation } from "react-i18next";
@@ -13,6 +13,10 @@ interface DualDegreeInformation {
 }
 
 const Pedagogy: React.FC = () => {
+  const sectionVariants: Variants = {
+    hidden: { opacity: 0, y: -50 },
+    visible: { opacity: 1, y: 0 },
+  };
 
   const { t } = useTranslation();
 
@@ -70,49 +74,63 @@ const Pedagogy: React.FC = () => {
             />
           </div>
           <div className="text-center lg:text-left">
-            <h1 className="text-2xl lg:text-5xl xl:text-6xl font-bold leading-none text-[#2d2753]">
+            <h1 className="text-2xl lg:text-5xl xl:text-6xl font-bold leading-none text-[var(--primary-color)]">
               {t("pedagogy.title")}
             </h1>
-            <p className="text-lg lg:text-xl mt-6 font-light text-[#333333]">
+            <p className="text-lg lg:text-xl mt-6 font-light text-[var(--text-color)]">
               {t("pedagogy.description")}
             </p>
           </div>
         </motion.div>
       </section>
 
-      <section className="px-16 mt-4 text-center">
-        <h2 className="text-2xl lg:text-5xl font-semibold text-[#2d2753] flex items-center justify-center gap-3">
-          <i className="bx bx-info-circle text-[#cf1421] text-5xl"></i>
+      <motion.section
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true, amount: 0.5 }}
+        transition={{ duration: 0.7 }}
+        variants={sectionVariants}
+        className="px-16 mt-4 text-center"
+      >
+        <h2 className="text-2xl lg:text-5xl font-semibold text-[var(--primary-color)] flex items-center justify-center gap-3">
+          <i className="bx bx-info-circle text-[var(--secondary-color)] text-5xl"></i>
           {t("pedagogy.careerTitle")}
         </h2>
-        <h5 className="pt-10 text-xl lg:text-3xl font-semibold text-[#2d2753]">
+        <h5 className="pt-10 text-xl lg:text-3xl font-semibold text-[var(--primary-color)]">
           {t("pedagogy.careerSubTitle")}
         </h5>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mt-10">
           {information.map((item, index) => (
             <motion.div
               key={index}
-              className="p-12 rounded-lg flex justify-center items-center border border-gray-200 transition-all hover:shadow-2xl hover:border-[#cf1421]"
+              className="p-12 rounded-lg flex justify-center items-center border border-gray-200 transition-all hover:shadow-2xl hover:border-[var(--secondary-color)]"
               whileHover={{ scale: 1.05 }}
               transition={{ duration: 0.2 }}
             >
-              <p className="font-semibold text-[18px] md:text-2xl text-[#2d2753] text-center">
+              <p className="font-semibold text-[18px] md:text-2xl text-[var(--primary-color)] text-center">
                 {item.description}
               </p>
             </motion.div>
           ))}
         </div>
-      </section>
+      </motion.section>
 
-      <section className="px-16 text-center mt-18">
-        <h2 className="text-2xl lg:text-5xl font-semibold text-[#2d2753] flex items-center justify-center gap-3">
-          <i className="bx bx-info-circle text-[#cf1421] text-5xl"></i>
+      <motion.section
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true, amount: 0.2 }}
+        transition={{ duration: 0.7 }}
+        variants={sectionVariants}
+        className="px-16 text-center mt-18"
+      >
+        <h2 className="text-2xl lg:text-5xl font-semibold text-[var(--primary-color)] flex items-center justify-center gap-3">
+          <i className="bx bx-info-circle text-[var(--secondary-color)] text-5xl"></i>
           {t("pedagogy.opportunityTitle")}
         </h2>
-        <h5 className="pt-10 text-xl lg:text-3xl font-semibold text-[#cf1421]">
+        <h5 className="pt-10 text-xl lg:text-3xl font-semibold text-[var(--secondary-color)]">
           {t("pedagogy.opportunitySubTitle")}
         </h5>
-        <p className="text-xl lg:text-2xl mt-6 font-extralight text-[#333333] leading-relaxed">
+        <p className="text-xl lg:text-2xl mt-6 font-extralight text-[var(--text-color)] leading-relaxed">
           {t("pedagogy.opportunityDescription")}
         </p>
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center mt-10">
@@ -131,19 +149,19 @@ const Pedagogy: React.FC = () => {
                 whileHover={{ scale: 1.02 }}
               >
                 <i
-                  className={`bx ${item.icon} text-[#cf1421] text-3xl mr-3`}
+                  className={`bx ${item.icon} text-[var(--secondary-color)] text-3xl mr-3`}
                 ></i>
-                <p className="text-left font-medium md:text-xl text-[17px] text-[#2d2753]">
+                <p className="text-left font-medium md:text-xl text-[17px] text-[var(--primary-color)]">
                   {item.description}
                 </p>
               </motion.div>
             ))}
           </div>
         </div>
-        <p className="text-xl lg:text-2xl mt-8 font-extralight text-[#333333] leading-relaxed pb-10">
+        <p className="text-xl lg:text-2xl mt-8 font-extralight text-[var(--text-color)] leading-relaxed pb-10">
           {t("pedagogy.opportunitySubDescription")}
         </p>
-      </section>
+      </motion.section>
     </>
   );
 };

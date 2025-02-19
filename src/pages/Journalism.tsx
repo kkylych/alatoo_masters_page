@@ -7,7 +7,6 @@ interface InformationItem {
 }
 
 const Journalism: React.FC = () => {
-
   const sectionVariants: Variants = {
     hidden: { opacity: 0, y: -50 },
     visible: { opacity: 1, y: 0 },
@@ -15,7 +14,7 @@ const Journalism: React.FC = () => {
 
   const { t } = useTranslation();
 
-  const information : InformationItem[]= [
+  const information: InformationItem[] = [
     {
       description: t("journalism.choiceItem_1"),
     },
@@ -53,19 +52,26 @@ const Journalism: React.FC = () => {
           </div>
 
           <div className="text-center lg:text-left lg:w-1/2 sm:pb-12">
-            <h1 className="text-2xl lg:text-5xl xl:text-6xl font-bold leading-none text-[#2d2753]">
+            <h1 className="text-2xl lg:text-5xl xl:text-6xl font-bold leading-none text-[var(--primary-color)]">
               {t("journalism.title")}
             </h1>
-            <p className="text-lg lg:text-xl mt-6 font-light text-[#333333]">
+            <p className="text-lg lg:text-xl mt-6 font-light text-[var(--text-color)]">
               {t("journalism.description")}
             </p>
           </div>
         </motion.div>
       </section>
 
-      <div className="px-8 mx-auto gap-12 text-center max-w-full overflow-hidden md:pt-10 pt-7">
-        <h2 className="text-3xl lg:text-5xl font-semibold text-[#2d2753] flex items-center justify-center gap-3">
-          <i className="bx bx-info-circle text-[#cf1421] text-5xl"></i>
+      <motion.div
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true, amount: 0.2 }}
+        transition={{ duration: 0.7 }}
+        variants={sectionVariants}
+        className="px-8 mx-auto gap-12 text-center max-w-full overflow-hidden md:pt-10 pt-7"
+      >
+        <h2 className="text-3xl lg:text-5xl font-semibold text-[var(--primary-color)] flex items-center justify-center gap-3">
+          <i className="bx bx-info-circle text-[var(--secondary-color)] text-5xl"></i>
           {t("journalism.choiceTitle")}
         </h2>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 gap-6 mt-15 flex-wrap">
@@ -77,17 +83,17 @@ const Journalism: React.FC = () => {
               transition={{ duration: 0.2 }}
             >
               <div
-                className="flex justify-center items-center flex-col p-12 rounded-lg border border-solid border-gray-200 mb-8 box-border md:h-60 transition-all duration-300 hover:shadow-2xl hover:border-[#cf1421]"
+                className="flex justify-center items-center flex-col p-12 rounded-lg border border-solid border-gray-200 mb-8 box-border md:h-60 transition-all duration-300 hover:shadow-2xl hover:border-[var(--secondary-color)]"
                 style={{ boxShadow: "0 10px 28px rgba(0,0,0,.08)" }}
               >
-                <p className="font-semibold text-[21px] p-8 transition-colors duration-300 text-[#2d2753]">
+                <p className="font-semibold text-[21px] md:text-[17px] lg:text-[21px] p-8 transition-colors duration-300 text-[var(--primary-color)]">
                   {feature.description}
                 </p>
               </div>
             </motion.div>
           ))}
         </div>
-      </div>
+      </motion.div>
     </>
   );
 };

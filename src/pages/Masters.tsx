@@ -12,11 +12,11 @@ const Masters: React.FC = () => {
   const buttonVariants: Variants = {
     hover: {
       scale: 1.1,
-      backgroundColor: "#cf1421",
+      backgroundColor: "var(--secondary-color)",
       transition: { duration: 0.15 },
     },
     tap: { scale: 0.95 },
-    initial: { scale: 1, backgroundColor: "#2d2753" },
+    initial: { scale: 1, backgroundColor: "var(--primary-color)" },
   };
 
   const { t } = useTranslation();
@@ -34,10 +34,10 @@ const Masters: React.FC = () => {
           variants={sectionVariants}
         >
           <div className="text-center lg:text-left lg:w-1/2 sm:pb-12">
-            <h1 className="text-2xl lg:text-5xl xl:text-6xl font-bold leading-none text-[#2d2753]">
+            <h1 className="text-2xl lg:text-5xl xl:text-6xl font-bold leading-none text-[var(--primary-color)]">
               {t("masters.title")}
             </h1>
-            <p className="text-xl lg:text-2xl mt-6 font-light text-[#333333]">
+            <p className="text-xl lg:text-2xl mt-6 font-light text-[var(--text-color)]">
               {t("masters.description")}
             </p>
             <p className="mt-8 md:mt-12">

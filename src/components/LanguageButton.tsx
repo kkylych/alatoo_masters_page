@@ -1,3 +1,4 @@
+import { useEffect } from "react";
 import { useTranslation } from "react-i18next";
 import Flag from "react-world-flags";
 
@@ -5,9 +6,17 @@ const LanguageButton: React.FC = () => {
   const { i18n } = useTranslation();
   const currentLanguage = i18n.language;
 
+  useEffect(() => {
+    const storedLang = localStorage.getItem("language");
+    if (storedLang && storedLang !== currentLanguage) {
+      i18n.changeLanguage(storedLang);
+    }
+  }, [i18n, currentLanguage]);
+
   const toggleLanguage = () => {
     const newLang = currentLanguage === "ru" ? "en" : "ru";
     i18n.changeLanguage(newLang);
+    localStorage.setItem("language", newLang);
   };
 
   return (

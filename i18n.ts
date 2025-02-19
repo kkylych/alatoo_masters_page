@@ -1,6 +1,8 @@
 import i18n from "i18next";
 import { initReactI18next } from "react-i18next";
 
+const savedLanguage = localStorage.getItem("language") || "ru";
+
 i18n.use(initReactI18next).init({
   resources: {
     ru: {
@@ -537,7 +539,7 @@ i18n.use(initReactI18next).init({
       },
     },
   },
-  lng: "ru", // язык по умолчанию
+  lng: savedLanguage, // язык по умолчанию
   fallbackLng: "en",
   interpolation: {
     escapeValue: false, // React уже обрабатывает экранирование

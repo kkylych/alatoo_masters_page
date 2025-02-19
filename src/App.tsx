@@ -13,10 +13,12 @@ import Linguistics from "./pages/Linguistics";
 import Philology from "./pages/Philology";
 import Layout from "./pages/Layout";
 import MastersLayout from "./pages/MastersLayout";
+import ScrollToTop from "./hooks/ScrollToTop";
 
 function App() {
   return (
-    <div className="w-full h-full bg-[#f2f2f2]">
+    <div className="w-full h-full bg-[var(--background-color)]">
+      <ScrollToTop />
       <Routes>
         <Route element={<Layout />}>
           <Route path="/" element={<h1>Home Page</h1>} />
