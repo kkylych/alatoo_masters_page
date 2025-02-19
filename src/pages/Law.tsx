@@ -24,6 +24,7 @@ const Law: React.FC = () => {
           <div className="lg:w-1/2 pt-5 pb-5">
             <div style={{ height: "450px" }}>
               <img
+                loading="lazy"
                 src={lawPhoto}
                 alt=""
                 className="drop-shadow-2xl w-full h-full object-cover rounded-lg hover:scale-102 transition-all"

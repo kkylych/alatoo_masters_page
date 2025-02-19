@@ -68,6 +68,7 @@ const Pedagogy: React.FC = () => {
         >
           <div className="w-full h-[450px]">
             <img
+              loading="lazy"
               src={pedPhoto}
               alt=""
               className="drop-shadow-2xl w-full h-full object-cover rounded-lg hover:scale-102 transition-all"
@@ -136,6 +137,7 @@ const Pedagogy: React.FC = () => {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center mt-10">
           <div className="w-full h-[450px]">
             <img
+              loading="lazy"
               src={degreePhoto}
               alt=""
               className="drop-shadow-2xl w-full h-full object-cover rounded-lg hover:scale-102 transition-all"

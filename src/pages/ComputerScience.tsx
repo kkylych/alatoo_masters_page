@@ -2,8 +2,7 @@ import { motion, Variants } from "framer-motion";
 import comsciPhoto from "../assets/comsci_photo.webp";
 import { useTranslation } from "react-i18next";
 
-const ComputerScience:React.FC = () => {
-
+const ComputerScience: React.FC = () => {
   const sectionVariants: Variants = {
     hidden: { opacity: 0, y: -50 },
     visible: { opacity: 1, y: 0 },
@@ -25,6 +24,7 @@ const ComputerScience:React.FC = () => {
           <div className="lg:w-1/2 pt-5 pb-5">
             <div style={{ height: "450px" }}>
               <img
+                loading="lazy"
                 src={comsciPhoto}
                 alt=""
                 className="drop-shadow-2xl w-full h-full object-cover rounded-lg hover:scale-102 transition-all"
