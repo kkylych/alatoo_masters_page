@@ -1,9 +1,15 @@
-import { motion } from "framer-motion";
-import psyPhoto from "../assets/psy_photo.jpg";
+import { motion, Variants } from "framer-motion";
+import psyPhoto from "../assets/psy_photo.webp";
 import { useTranslation } from "react-i18next";
 
-const Psychology = () => {
+const Psychology: React.FC = () => {
+  const sectionVariants: Variants = {
+    hidden: { opacity: 0, y: -50 },
+    visible: { opacity: 1, y: 0 },
+  };
+
   const { t } = useTranslation();
+  
   return (
     <>
       <section className="px-8 pt-20 pb-20">
@@ -14,10 +20,7 @@ const Psychology = () => {
           animate={{ opacity: 1, y: 0 }}
           exit={{ opacity: 0, y: -50 }}
           transition={{ duration: 0.7, ease: "easeOut" }}
-          variants={{
-            hidden: { opacity: 0, y: -50 },
-            visible: { opacity: 1, y: 0 },
-          }}
+          variants={sectionVariants}
         >
           <div className="lg:w-1/2 pt-5 pb-5">
             <div style={{ height: "450px" }}>
@@ -31,17 +34,9 @@ const Psychology = () => {
 
           <div className="text-center lg:text-left lg:w-1/2 sm:pb-12">
             <h1 className="text-2xl lg:text-5xl xl:text-6xl font-bold leading-none text-[#2d2753]">
-              {/* Психология */}
               {t("psychology.title")}
             </h1>
             <p className="text-lg lg:text-xl mt-6 font-light text-[#333333]">
-              {/* Магистерская программа «Психология» предоставляет магистрантам
-              глубокое понимание психологических теорий и концепций, развивает
-              практические навыки работы с данными и клиентами, поддерживает
-              интердисциплинарный подход к исследованиям, поощряет участие в
-              научных проектах и готовит к разнообразным карьерным возможностям
-              в области психологии, включая психотерапию, образование,
-              управление персоналом и исследования. */}
               {t("psychology.description")}
             </p>
           </div>

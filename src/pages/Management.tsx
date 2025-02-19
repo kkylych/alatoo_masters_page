@@ -1,8 +1,13 @@
-import { motion } from "framer-motion";
-import mangPhoto from "../assets/mang_photo.jpg";
+import { motion, Variants } from "framer-motion";
+import mangPhoto from "../assets/mang_photo.webp";
 import { useTranslation } from "react-i18next";
 
-const Management = () => {
+const Management: React.FC = () => {
+  const sectionVariants: Variants = {
+    hidden: { opacity: 0, y: -50 },
+    visible: { opacity: 1, y: 0 },
+  };
+
   const { t } = useTranslation();
   return (
     <>
@@ -14,10 +19,7 @@ const Management = () => {
           animate={{ opacity: 1, y: 0 }}
           exit={{ opacity: 0, y: -50 }}
           transition={{ duration: 0.7, ease: "easeOut" }}
-          variants={{
-            hidden: { opacity: 0, y: -50 },
-            visible: { opacity: 1, y: 0 },
-          }}
+          variants={sectionVariants}
         >
           <div className="lg:w-1/2 pt-5 pb-5">
             <div style={{ height: "450px" }}>
@@ -31,20 +33,9 @@ const Management = () => {
 
           <div className="text-center lg:text-left lg:w-1/2 sm:pb-12">
             <h1 className="text-2xl lg:text-5xl xl:text-6xl font-bold leading-none text-[#2d2753]">
-              {/* Менеджмент */}
               {t("management.title")}
             </h1>
             <p className="text-lg lg:text-xl mt-6 font-light text-[#333333]">
-              {/* Магистерская программа по Менеджменту (бизнес-аналитика)
-              Международного университета Ала-Тоо предоставит вам все
-              необходимые знания и навыки для успешной карьеры в сфере
-              бизнес-аналитики. Программа включает комплексное сочетание
-              технических, аналитических, бизнес- и коммуникационных
-              компетенций, что позволит вам эффективно работать с данными,
-              принимать обоснованные решения и разрабатывать стратегии для
-              бизнеса. Обучение охватывает ключевые аспекты анализа данных,
-              управления проектами, цифровой трансформации и бизнес-стратегий,
-              готовя выпускников к востребованным позициям в ведущих компаниях. */}
               {t("management.description")}
             </p>
           </div>

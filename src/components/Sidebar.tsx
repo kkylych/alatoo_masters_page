@@ -1,9 +1,14 @@
-import { useState } from "react";
+import React, { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { NavLink, useLocation } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 
-const Sidebar = () => {
+interface MenuItem {
+  link: string;
+  label: string;
+}
+
+const Sidebar: React.FC = () => {
   const { t } = useTranslation();
   const [isSidebarOpen, setIsSidebarOpen] = useState<boolean>(false);
   const location = useLocation();
@@ -13,7 +18,7 @@ const Sidebar = () => {
     closed: { x: "-100%", transition: { duration: 0.2 } },
   };
 
-  const menuItems = [
+  const menuItems: MenuItem[] = [
     {
       link: "/masters/computer-science",
       label: t("sidebar.label_1"),
@@ -57,7 +62,7 @@ const Sidebar = () => {
             variants={sidebarVariants}
           >
             <button
-              className="self-end text-2xl mb-4 cursor-pointer"
+              className="self-end text-2xl mb-4 cursor-pointer hover:scale-105 transition-all"
               onClick={() => setIsSidebarOpen(false)}
             >
               &#10005;
@@ -68,7 +73,7 @@ const Sidebar = () => {
                 return (
                   <motion.li
                     key={index}
-                    className={`text-center py-1 cursor-pointer rounded-md ${
+                    className={`text-center py-1 cursor-pointer rounded-md pointer-events-auto ${
                       isActive
                         ? "bg-[#cf1421] text-white"
                         : "hover:bg-[#cf1421] transition-all"

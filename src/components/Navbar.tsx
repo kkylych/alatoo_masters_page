@@ -1,13 +1,13 @@
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import Logo from "../assets/logo.png";
+import Logo from "../assets/logo.webp";
 import { NavLink } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 import LanguageButton from "./LanguageButton";
 
-const Navbar = () => {
+const Navbar: React.FC = () => {
   const { t } = useTranslation();
-  const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [isMenuOpen, setIsMenuOpen] = useState<boolean>(false);
 
   const menuVariants = {
     open: { opacity: 1, y: 0 },
@@ -38,7 +38,9 @@ const Navbar = () => {
           whileHover="hover"
           whileTap="tap"
         >
-          <NavLink to="/about">{t("navbar.link_1")}</NavLink>
+          <NavLink to="/about" className="pointer-events-auto">
+            {t("navbar.link_1")}
+          </NavLink>
         </motion.li>
         <motion.li
           className="p-2 rounded-md cursor-pointer"
@@ -46,7 +48,9 @@ const Navbar = () => {
           whileHover="hover"
           whileTap="tap"
         >
-          <NavLink to="/masters">{t("navbar.link_2")}</NavLink>
+          <NavLink to="/masters" className="pointer-events-auto">
+            {t("navbar.link_2")}
+          </NavLink>
         </motion.li>
         <motion.li
           className="p-2 rounded-md cursor-pointer"
@@ -54,7 +58,9 @@ const Navbar = () => {
           whileHover="hover"
           whileTap="tap"
         >
-          <NavLink to="/phd">{t("navbar.link_3")}</NavLink>
+          <NavLink to="/phd" className="pointer-events-auto">
+            {t("navbar.link_3")}
+          </NavLink>
         </motion.li>
         <motion.li
           className="p-2 rounded-md cursor-pointer"
@@ -62,7 +68,9 @@ const Navbar = () => {
           whileHover="hover"
           whileTap="tap"
         >
-          <NavLink to="/aspirantura">{t("navbar.link_4")}</NavLink>
+          <NavLink to="/aspirantura" className="pointer-events-auto">
+            {t("navbar.link_4")}
+          </NavLink>
         </motion.li>
         <motion.li
           className="p-2 rounded-md cursor-pointer"
@@ -70,7 +78,9 @@ const Navbar = () => {
           whileHover="hover"
           whileTap="tap"
         >
-          <NavLink to="/publications">{t("navbar.link_5")}</NavLink>
+          <NavLink to="/publications" className="pointer-events-auto">
+            {t("navbar.link_5")}
+          </NavLink>
         </motion.li>
         <motion.li
           className="p-2 rounded-md cursor-pointer"
@@ -78,7 +88,9 @@ const Navbar = () => {
           whileHover="hover"
           whileTap="tap"
         >
-          <NavLink to="/admissions">{t("navbar.link_6")}</NavLink>
+          <NavLink to="/admissions" className="pointer-events-auto">
+            {t("navbar.link_6")}
+          </NavLink>
         </motion.li>
       </ul>
 
@@ -97,8 +109,8 @@ const Navbar = () => {
       </div>
 
       <div className="flex items-center gap-5">
-          <LanguageButton />
-        
+        <LanguageButton />
+
         <motion.i
           className="bx bx-menu block xl:before:hidden text-5xl cursor-pointer text-white"
           onClick={() => setIsMenuOpen(!isMenuOpen)}
@@ -122,7 +134,11 @@ const Navbar = () => {
               whileHover={{ backgroundColor: "#cf1421", color: "#ffffff" }}
               transition={{ duration: 0.2 }}
             >
-              <NavLink onClick={() => setIsMenuOpen(false)} to="/about">
+              <NavLink
+                onClick={() => setIsMenuOpen(false)}
+                to="/about"
+                className="pointer-events-auto"
+              >
                 {t("navbar.link_1")}
               </NavLink>
             </motion.li>
@@ -131,7 +147,11 @@ const Navbar = () => {
               whileHover={{ backgroundColor: "#cf1421", color: "#ffffff" }}
               transition={{ duration: 0.2 }}
             >
-              <NavLink onClick={() => setIsMenuOpen(false)} to="/masters">
+              <NavLink
+                onClick={() => setIsMenuOpen(false)}
+                to="/masters"
+                className="pointer-events-auto"
+              >
                 {t("navbar.link_2")}
               </NavLink>
             </motion.li>
@@ -140,7 +160,11 @@ const Navbar = () => {
               whileHover={{ backgroundColor: "#cf1421", color: "#ffffff" }}
               transition={{ duration: 0.2 }}
             >
-              <NavLink onClick={() => setIsMenuOpen(false)} to="/phd">
+              <NavLink
+                onClick={() => setIsMenuOpen(false)}
+                to="/phd"
+                className="pointer-events-auto"
+              >
                 {t("navbar.link_3")}
               </NavLink>
             </motion.li>
@@ -149,7 +173,11 @@ const Navbar = () => {
               whileHover={{ backgroundColor: "#cf1421", color: "#ffffff" }}
               transition={{ duration: 0.2 }}
             >
-              <NavLink onClick={() => setIsMenuOpen(false)} to="/aspirantura">
+              <NavLink
+                onClick={() => setIsMenuOpen(false)}
+                to="/aspirantura"
+                className="pointer-events-auto"
+              >
                 {t("navbar.link_4")}
               </NavLink>
             </motion.li>
@@ -158,7 +186,11 @@ const Navbar = () => {
               whileHover={{ backgroundColor: "#cf1421", color: "#ffffff" }}
               transition={{ duration: 0.2 }}
             >
-              <NavLink onClick={() => setIsMenuOpen(false)} to="/publications">
+              <NavLink
+                onClick={() => setIsMenuOpen(false)}
+                to="/publications"
+                className="pointer-events-auto"
+              >
                 {t("navbar.link_5")}
               </NavLink>
             </motion.li>
@@ -167,7 +199,11 @@ const Navbar = () => {
               whileHover={{ backgroundColor: "#cf1421", color: "#ffffff" }}
               transition={{ duration: 0.2 }}
             >
-              <NavLink onClick={() => setIsMenuOpen(false)} to="/admissions">
+              <NavLink
+                onClick={() => setIsMenuOpen(false)}
+                to="/admissions"
+                className="pointer-events-auto"
+              >
                 {t("navbar.link_6")}
               </NavLink>
             </motion.li>

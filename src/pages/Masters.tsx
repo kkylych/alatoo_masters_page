@@ -1,10 +1,15 @@
-import { motion } from "framer-motion";
-import mastersPhoto from "../assets/masters_photo.jpg";
+import { motion, Variants } from "framer-motion";
+import mastersPhoto from "../assets/masters_photo.webp";
 import MastersInfo from "./MastersInfo";
 import { useTranslation } from "react-i18next";
 
-const Masters = () => {
-  const buttonVariants = {
+const Masters: React.FC = () => {
+  const sectionVariants: Variants = {
+    hidden: { opacity: 0, y: -50 },
+    visible: { opacity: 1, y: 0 },
+  };
+
+  const buttonVariants: Variants = {
     hover: {
       scale: 1.1,
       backgroundColor: "#cf1421",
@@ -26,22 +31,13 @@ const Masters = () => {
           animate={{ opacity: 1, y: 0 }}
           exit={{ opacity: 0, y: -50 }}
           transition={{ duration: 0.7, ease: "easeOut" }}
-          variants={{
-            hidden: { opacity: 0, y: -50 },
-            visible: { opacity: 1, y: 0 },
-          }}
+          variants={sectionVariants}
         >
           <div className="text-center lg:text-left lg:w-1/2 sm:pb-12">
             <h1 className="text-2xl lg:text-5xl xl:text-6xl font-bold leading-none text-[#2d2753]">
-              {/* Магистратура */}
               {t("masters.title")}
             </h1>
             <p className="text-xl lg:text-2xl mt-6 font-light text-[#333333]">
-              {/* Магистратура — это вторая ступень высшего образования,
-              фокусирующаяся на углублении знаний и развитии исследовательских
-              навыков. Степень «магистр» присуждается после освоения программы и
-              защиты диссертации. Включает научные семинары и исследовательские
-              мероприятия. */}
               {t("masters.description")}
             </p>
             <p className="mt-8 md:mt-12">
@@ -53,7 +49,6 @@ const Masters = () => {
                 whileHover="hover"
                 whileTap="tap"
               >
-                {/* Подробнее */}
                 {t("masters.button")}
               </motion.button>
             </p>

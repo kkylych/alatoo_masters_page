@@ -1,9 +1,15 @@
-import { motion } from "framer-motion";
-import interRelPhoto from "../assets/interRel_photo.jpg";
+import { motion, Variants } from "framer-motion";
+import interRelPhoto from "../assets/interRel_photo.webp";
 import { useTranslation } from "react-i18next";
 
-const InternationalRelations = () => {
+const InternationalRelations: React.FC = () => {
+  const sectionVariants: Variants = {
+    hidden: { opacity: 0, y: -50 },
+    visible: { opacity: 1, y: 0 },
+  };
+
   const { t } = useTranslation();
+  
   return (
     <>
       <section className="px-8 pt-20 pb-20 ">
@@ -14,10 +20,7 @@ const InternationalRelations = () => {
           animate={{ opacity: 1, y: 0 }}
           exit={{ opacity: 0, y: -50 }}
           transition={{ duration: 0.7, ease: "easeOut" }}
-          variants={{
-            hidden: { opacity: 0, y: -50 },
-            visible: { opacity: 1, y: 0 },
-          }}
+          variants={sectionVariants}
         >
           <div className="lg:w-1/2 pt-5 pb-5">
             <div style={{ height: "450px" }}>
@@ -31,19 +34,9 @@ const InternationalRelations = () => {
 
           <div className="text-center lg:text-left lg:w-1/2 sm:pb-12">
             <h1 className="text-2xl lg:text-5xl xl:text-6xl font-bold leading-none text-[#2d2753]">
-              {/* Международные отношения */}
               {t("internationalRelations.title")}
             </h1>
             <p className="text-lg lg:text-xl mt-6 font-light text-[#333333]">
-              {/* Программа «Международные отношения» обеспечивает междисциплинарное
-              исследование глобальной динамики с упором на такие ключевые
-              области, как международная политика, международное развитие,
-              глобальное управление, экономические отношения и исследования
-              безопасности. Наша программа, основанная на ценностях
-              многосторонности, прав человека и устойчивости, дает студентам
-              знания и навыки, необходимые для успешной карьеры в дипломатии,
-              политическом анализе, международном развитии, разрешении
-              конфликтов и международном праве. */}
               {t("internationalRelations.description")}
             </p>
           </div>

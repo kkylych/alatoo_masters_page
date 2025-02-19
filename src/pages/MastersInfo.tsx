@@ -1,9 +1,20 @@
-import { motion } from "framer-motion";
+import { motion, Variants } from "framer-motion";
 import { useTranslation } from "react-i18next";
 
-const MastersInfo = () => {
+interface InformationItem {
+  title: string;
+  description: string;
+}
+
+const MastersInfo: React.FC = () => {
+  const sectionVariants: Variants = {
+    hidden: { opacity: 0, y: 100 },
+    visible: { opacity: 1, y: 0 },
+  };
+
   const { t } = useTranslation();
-  const information = [
+
+  const information: InformationItem[] = [
     {
       title: t("mastersInfo.informationItemTitle_1"),
       description: t("mastersInfo.informationItemDescription_1"),
@@ -18,7 +29,7 @@ const MastersInfo = () => {
     },
   ];
 
-  const documents = [
+  const documents: string[] = [
     t("mastersInfo.documentItem_1"),
     t("mastersInfo.documentItem_2"),
     t("mastersInfo.documentItem_3"),
@@ -34,15 +45,11 @@ const MastersInfo = () => {
         whileInView="visible"
         viewport={{ once: true, amount: 0.5 }}
         transition={{ duration: 0.7 }}
-        variants={{
-          hidden: { opacity: 0, y: 100 },
-          visible: { opacity: 1, y: 0 },
-        }}
+        variants={sectionVariants}
       >
         <div className="px-8 mx-auto gap-12 text-center max-w-full overflow-hidden md:pt-10 pt-7 flex flex-col items-center">
           <h2 className="text-2xl lg:text-5xl font-semibold text-[#2d2753] flex items-center justify-center gap-3">
             <i className="bx bx-info-circle text-[#cf1421] text-5xl"></i>
-            {/* Основные сведения */}
             {t("mastersInfo.informationTitle")}
           </h2>
           <div className="flex flex-col md:flex-row gap-6 mt-15 flex-wrap">
@@ -76,15 +83,11 @@ const MastersInfo = () => {
         whileInView="visible"
         viewport={{ once: true, amount: 0.5 }}
         transition={{ duration: 0.7 }}
-        variants={{
-          hidden: { opacity: 0, y: 100 },
-          visible: { opacity: 1, y: 0 },
-        }}
+        variants={sectionVariants}
       >
         <div className="container px-8 mx-auto text-center max-w-full overflow-hidden md:pt-10 pt-7 flex flex-col items-center">
           <h2 className="text-2xl lg:text-5xl font-semibold text-[#2d2753] flex items-center justify-center gap-3">
             <i className="bx bxs-file-doc text-[#cf1421] text-5xl"></i>
-            {/* Документы для поступления */}
             {t("mastersInfo.documentTitle")}
           </h2>
           <div className="flex flex-col md:flex-row mt-15 flex-wrap justify-center">
@@ -115,10 +118,7 @@ const MastersInfo = () => {
         whileInView="visible"
         viewport={{ once: true, amount: 0.5 }}
         transition={{ duration: 0.5, ease: "easeInOut" }}
-        variants={{
-          hidden: { opacity: 0, y: 100 },
-          visible: { opacity: 1, y: 0 },
-        }}
+        variants={sectionVariants}
       >
         <div className="container px-8 text-center mb-15 mx-auto max-w-full">
           <div
@@ -149,16 +149,11 @@ const MastersInfo = () => {
               </motion.span>
 
               <h3 className="md:text-5xl font-bold text-[#2d2753] text-3xl transition-colors duration-300 group-hover:text-white flex justify-center">
-                {/* На заметку иностранным гражданам! */}
                 {t("mastersInfo.warningTitle")}
               </h3>
 
               <div className="px-8 text-xl lg:text-2xl mt-6 font-light text-[#333333] leading-relaxed transition-colors duration-300 group-hover:text-white/90 max-w-2xl mx-auto">
                 <p className="flex justify-center items-center">
-                  {/* Представить перевод паспорта, диплома и его вкладыша на
-                  кыргызский либо на русский языки (перевод должен быть
-                  подтвержден сертифицированным нотариусом или переводческой
-                  фирмой). */}
                   {t("mastersInfo.warningDescription")}
                 </p>
               </div>

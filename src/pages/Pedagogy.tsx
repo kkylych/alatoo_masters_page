@@ -1,12 +1,22 @@
 import { motion } from "framer-motion";
-import pedPhoto from "../assets/ped_photo.jpg";
-import degreePhoto from "../assets/degree_photo.jpg";
+import pedPhoto from "../assets/ped_photo.webp";
+import degreePhoto from "../assets/degree_photo.webp";
 import { useTranslation } from "react-i18next";
 
-const Pedagogy = () => {
+interface InformationItem {
+  description: string;
+}
+
+interface DualDegreeInformation {
+  description: string;
+  icon: string;
+}
+
+const Pedagogy: React.FC = () => {
+
   const { t } = useTranslation();
 
-  const information = [
+  const information: InformationItem[] = [
     { description: t("pedagogy.careerInformationItem_1") },
     {
       description: t("pedagogy.careerInformationItem_2"),
@@ -17,7 +27,7 @@ const Pedagogy = () => {
     },
   ];
 
-  const dualDegreeInformation = [
+  const dualDegreeInformation: DualDegreeInformation[] = [
     { description: t("pedagogy.opportunityItem_1"), icon: "bxs-book-bookmark" },
     {
       description: t("pedagogy.opportunityItem_2"),
@@ -61,22 +71,9 @@ const Pedagogy = () => {
           </div>
           <div className="text-center lg:text-left">
             <h1 className="text-2xl lg:text-5xl xl:text-6xl font-bold leading-none text-[#2d2753]">
-              {/* Педагогика */}
               {t("pedagogy.title")}
             </h1>
             <p className="text-lg lg:text-xl mt-6 font-light text-[#333333]">
-              {/* Магистратура по педагогике — это интенсивная программа, нацеленная
-              на подготовку специалистов, обладающих глубокими знаниями в
-              области образовательных технологий, педагогической психологии и
-              управленческих навыков. Она сочетает в себе теоретическое обучение
-              и практическое применение знаний, что обеспечивает высокую
-              конкурентоспособность выпускников на рынке труда. Программа
-              активно поддерживает научные исследования. Магистранты имеют
-              возможность участвовать в конференциях, семинарах и научных
-              проектах. Исследования могут быть направлены на различные аспекты
-              педагогики, включая оценку эффективности образовательных
-              технологий, изучение социальных факторов, влияющих на обучение, и
-              разработку новых образовательных методик. */}
               {t("pedagogy.description")}
             </p>
           </div>
@@ -86,11 +83,9 @@ const Pedagogy = () => {
       <section className="px-16 mt-4 text-center">
         <h2 className="text-2xl lg:text-5xl font-semibold text-[#2d2753] flex items-center justify-center gap-3">
           <i className="bx bx-info-circle text-[#cf1421] text-5xl"></i>
-          {/* Возможности карьерного роста */}
           {t("pedagogy.careerTitle")}
         </h2>
         <h5 className="pt-10 text-xl lg:text-3xl font-semibold text-[#2d2753]">
-          {/* Выпускники программы могут выбрать различные карьерные пути, включая: */}
           {t("pedagogy.careerSubTitle")}
         </h5>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mt-10">
@@ -112,17 +107,12 @@ const Pedagogy = () => {
       <section className="px-16 text-center mt-18">
         <h2 className="text-2xl lg:text-5xl font-semibold text-[#2d2753] flex items-center justify-center gap-3">
           <i className="bx bx-info-circle text-[#cf1421] text-5xl"></i>
-          {/* Дополнительные возможности */}
           {t("pedagogy.opportunityTitle")}
         </h2>
         <h5 className="pt-10 text-xl lg:text-3xl font-semibold text-[#cf1421]">
-          {/* Двойной диплом */}
           {t("pedagogy.opportunitySubTitle")}
         </h5>
         <p className="text-xl lg:text-2xl mt-6 font-extralight text-[#333333] leading-relaxed">
-          {/* Одной из уникальных возможностей нашей программы является получение
-          двойного диплома. Магистранты могут подать в университет Северной
-          Америки, что позволяет им: */}
           {t("pedagogy.opportunityDescription")}
         </p>
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center mt-10">
@@ -151,11 +141,6 @@ const Pedagogy = () => {
           </div>
         </div>
         <p className="text-xl lg:text-2xl mt-8 font-extralight text-[#333333] leading-relaxed pb-10">
-          {/* Программа двойного диплома включает учебные модули, совместные проекты
-          и другие формы сотрудничества. Это не только улучшает академическую
-          подготовку магистров, но и делает их более привлекательными для
-          работодателей на международном уровне. */}
-
           {t("pedagogy.opportunitySubDescription")}
         </p>
       </section>

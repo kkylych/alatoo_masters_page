@@ -1,7 +1,7 @@
 import { useTranslation } from "react-i18next";
 import Flag from "react-world-flags";
 
-const LanguageButton = () => {
+const LanguageButton: React.FC = () => {
   const { i18n } = useTranslation();
   const currentLanguage = i18n.language;
 

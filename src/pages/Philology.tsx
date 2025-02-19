@@ -1,9 +1,15 @@
-import { motion } from "framer-motion";
-import philPhoto from "../assets/phil_photo.jpg";
+import { motion, Variants } from "framer-motion";
+import philPhoto from "../assets/phil_photo.webp";
 import { useTranslation } from "react-i18next";
 
-const Philology = () => {
+const Philology: React.FC = () => {
+  const sectionVariants: Variants = {
+    hidden: { opacity: 0, y: -50 },
+    visible: { opacity: 1, y: 0 },
+  };
+
   const { t } = useTranslation();
+
   return (
     <>
       <section className="px-8 pt-20 pb-20">
@@ -14,10 +20,7 @@ const Philology = () => {
           animate={{ opacity: 1, y: 0 }}
           exit={{ opacity: 0, y: -50 }}
           transition={{ duration: 0.7, ease: "easeOut" }}
-          variants={{
-            hidden: { opacity: 0, y: -50 },
-            visible: { opacity: 1, y: 0 },
-          }}
+          variants={sectionVariants}
         >
           <div className="lg:w-1/2 pt-5 pb-5">
             <div style={{ height: "450px" }}>
@@ -31,22 +34,9 @@ const Philology = () => {
 
           <div className="text-center lg:text-left lg:w-1/2 sm:pb-12">
             <h1 className="text-2xl lg:text-5xl xl:text-6xl font-bold leading-none text-[#2d2753]">
-              {/* Филология */}
               {t("philology.title")}
             </h1>
             <p className="text-lg lg:text-xl mt-6 font-light text-[#333333]">
-              {/* Программа сочетает изучение языков, литературы, культуры и
-              коммуникации, формируя специалистов в лингвистике, переводе,
-              преподавании и медиаиндустрии. Студенты овладевают английским,
-              кыргызским, русским, турецким, немецким и французским языками,
-              изучают отечественную, британскую и американскую литературу, а
-              также европейскую и американскую культуру. Выпускники могут
-              работать переводчиками, преподавателями, редакторами,
-              контент-менеджерами, исследователями и специалистами по
-              межкультурной коммуникации. Обучение развивает критическое
-              мышление, аналитические навыки и глубокое понимание языковых
-              процессов. Диплом открывает возможности в образовании, медиа,
-              науке, культуре и международных компаниях. */}
               {t("philology.description")}
             </p>
           </div>

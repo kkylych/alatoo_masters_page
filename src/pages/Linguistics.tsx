@@ -1,8 +1,13 @@
-import { motion } from "framer-motion";
-import lingPhoto from "../assets/ling_photo.jpg";
+import { motion, Variants } from "framer-motion";
+import lingPhoto from "../assets/ling_photo.webp";
 import { useTranslation } from "react-i18next";
 
-const Linguistics = () => {
+const Linguistics: React.FC = () => {
+  const sectionVariants: Variants = {
+    hidden: { opacity: 0, y: -50 },
+    visible: { opacity: 1, y: 0 },
+  };
+
   const { t } = useTranslation();
 
   return (
@@ -15,10 +20,7 @@ const Linguistics = () => {
           animate={{ opacity: 1, y: 0 }}
           exit={{ opacity: 0, y: -50 }}
           transition={{ duration: 0.7, ease: "easeOut" }}
-          variants={{
-            hidden: { opacity: 0, y: -50 },
-            visible: { opacity: 1, y: 0 },
-          }}
+          variants={sectionVariants}
         >
           <div className="lg:w-1/2 pt-5 pb-5">
             <div style={{ height: "450px" }}>
@@ -32,21 +34,9 @@ const Linguistics = () => {
 
           <div className="text-center lg:text-left lg:w-1/2 sm:pb-12">
             <h1 className="text-2xl lg:text-5xl xl:text-6xl font-bold leading-none text-[#2d2753]">
-              {/* Лингвистика */}
               {t("linguistics.title")}
             </h1>
             <p className="text-lg lg:text-xl mt-6 font-light text-[#333333]">
-              {/* Направление Лингвистика нацелено на уникальную образовательную
-              программу, которая обеспечивает студентам широкие знания и навыки
-              в области языковедения и языкознания, перевода и межкультурной
-              коммуникации. Наши выпускники могут работать в компаниях,
-              разрабатывающих лингвистический софт: программы распознавания
-              речи, автоматической обработки текста, автоматического перевода;
-              участвовать в создании различных компьютерных словарей,
-              справочников, энциклопедий, сайтов в Интернете; работать
-              переводчиками или преподавателями. Наша цель — развивать у
-              студентов критическое мышление, творческий подход к решению задач
-              и способность к эффективной коммуникации на различных языках. */}
               {t("linguistics.description")}
             </p>
           </div>
