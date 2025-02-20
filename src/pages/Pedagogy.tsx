@@ -108,7 +108,7 @@ const Pedagogy: React.FC = () => {
               whileHover={{ scale: 1.05 }}
               transition={{ duration: 0.2 }}
             >
-              <p className="font-semibold text-[18px] md:text-2xl text-[var(--primary-color)] text-center">
+              <p className="font-semibold text-[17px] md:text-[17px] lg:text-[18px] xl:text-[21px]  text-[var(--primary-color)] text-center">
                 {item.description}
               </p>
             </motion.div>
